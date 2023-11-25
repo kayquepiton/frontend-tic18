@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu, .news, .highlights {
+            width: 400px; /* Largura fixa */
+            background: #ebd9d9;
+            height: 300px; /* Altura fixa */
+            margin: 5px;
+            padding: 30px;
+        }
+
+        .services {
+            width: 400px; /* Largura fixa para os blocos de serviços e resultados */
+            background: #ebd9d9;
+            height: 300px; /* Altura fixa */
+            margin: 5px;
+            padding: 30px;
+        }
+
+        .results {
+            width: 870px; /* Largura fixa para os blocos de serviços e resultados */
+            background: #ebd9d9;
+            height: 300px; /* Altura fixa */
+            margin: 5px;
+            padding: 30px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .menu, .news, .highlights, .services, .results {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Seu Banner aqui</h1>
+    </header>
+
+    <div class="row">
+        <div class="menu">
+            <h2>Menu</h2>
+            <p>Conteúdo do menu aqui.</p>
+        </div>
+
+        <div class="news">
+            <h2>Notícias</h2>
+            <p>Conteúdo das notícias aqui.</p>
+        </div>
+
+        <div class="highlights">
+            <h2>Destaques</h2>
+            <p>Conteúdo dos destaques aqui.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="services">
+            <h2>Serviço</h2>
+            <p>Conteúdo do serviço aqui.</p>
+        </div>
+
+        <div class="results">
+            <h2>Resultados</h2>
+            <p>Conteúdo dos resultados aqui.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Seu Rodapé Aqui</p>
+    </footer>
+
+</body>
+</html>

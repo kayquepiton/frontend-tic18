@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(12, 80px); /* Ajustando para 12 linhas */
+        }
+
+        .box {
+            position: relative;
+            background-color: lightgray; /* Cor de fundo padrão para as caixas */
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #333; /* Cor de fundo da barra de título */
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .A1 {
+            background-color: green;
+            grid-area: 1/1/3/4; /* Aumentando o tamanho do banner para 3 linhas */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .A2 {
+            grid-area: 3/1/5/1; /* Ajustando posição e tamanho */
+        }
+
+        .A3 {
+            grid-area: 3/2/5/2; /* Ajustando posição e tamanho */
+        }
+
+        .A4 {
+            grid-area: 3/3/5/3; /* Ajustando posição e tamanho */
+        }
+
+        .A5 {
+            grid-area: 5/1/7/2; /* Ajustando posição e tamanho */
+        }
+
+        .A6 {
+            grid-area: 5/2/7/4; /* Ajustando posição e tamanho */
+        }
+
+        .A2 .bar, .A3 .bar, .A4 .bar, .A5 .bar, .A6 .bar {
+            background-color: #333; /* Cor de fundo da barra de título para A2-A6 */
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .A7 {
+            background-color: rgb(112, 216, 164);
+            margin-top: 10px;
+            grid-area: 7/1/9/4; /* Ajustando posição e tamanho */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="A1">Banner</div>
+        <div class="box A2">
+            <div class="bar">Título A2</div>
+            <div class="content">Conteúdo A2</div>
+        </div>
+        <div class="box A3">
+            <div class="bar">Título A3</div>
+            <div class="content">Conteúdo A3</div>
+        </div>
+        <div class="box A4">
+            <div class="bar">Título A4</div>
+            <div class="content">Conteúdo A4</div>
+        </div>
+        <div class="box A5">
+            <div class="bar">Título A5</div>
+            <div class="content">Conteúdo A5</div>
+        </div>
+        <div class="box A6">
+            <div class="bar">Título A6</div>
+            <div class="content">Conteúdo A6</div>
+        </div>
+        <div class="A7">Rodapé</div>
+    </div>
+</body>
+</html>
