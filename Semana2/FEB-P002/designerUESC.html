@@ -2,109 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Página</title>
+    <title>Grid</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        /* Reset CSS padrão */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        /* Estilos Gerais do Corpo do Documento */
+        body {
+            margin: 0;
+            padding: 0;
+            max-width: 1000px;
+            height: 100vh; /* Define a altura da página como 100% da altura da tela */
+            overflow-x: auto;
+            overflow-y: auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .row {
+        /* Estilos do Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, 180px);
+        }
+
+        /* Estilos Gerais das Caixas */
+        .box {
+            position: relative;
+            background-color: lightgray;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        /* Estilos das Barras de Título */
+        .bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Estilos do Conteúdo */
+        .content {
+            padding: 10px;
+            font-size: 14px;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .content p {
+            margin: 5px 0;
+        }
+
+        .content img {
+            max-width: 70%;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Estilos Específicos para Caixas A2 a A7 */
+        .A2, .A3, .A4, .A5, .A6{
+            background-color: rgb(112, 216, 164);
+            margin-top: 10px;
             display: flex;
-            justify-content: space-between;
-        }
-
-        .menu, .news, .highlights {
-            width: 400px; /* Largura fixa */
-            background: #ebd9d9;
-            height: 300px; /* Altura fixa */
-            margin: 5px;
-            padding: 30px;
-        }
-
-        .services {
-            width: 400px; /* Largura fixa para os blocos de serviços e resultados */
-            background: #ebd9d9;
-            height: 300px; /* Altura fixa */
-            margin: 5px;
-            padding: 30px;
-        }
-
-        .results {
-            width: 870px; /* Largura fixa para os blocos de serviços e resultados */
-            background: #ebd9d9;
-            height: 300px; /* Altura fixa */
-            margin: 5px;
-            padding: 30px;
-        }
-
-        footer {
-            background-color: #4CAF50;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
             color: white;
-            text-align: center;
-            width: 100%;
-            padding: 20px;
         }
 
-        @media (max-width: 500px) {
-            .row {
-                flex-direction: column;
+        .A2 .bar, .A3 .bar, .A4 .bar, .A5 .bar, .A6 .bar {
+            background-color: #333;
+        }
+
+        .A1 { 
+            background-color: rgb(112, 216, 164);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            height: 25%;
+        }
+
+        .A6 {
+            background-color: rgb(112, 216, 164);
+            margin-top: 10px;
+            grid-area: 2/2/3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+        }
+
+        .A7 { 
+            background-color: rgb(112, 216, 164);
+            display: flex;
+            grid-area: 3/2/3/4;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-top: 10px;
+            height: 25%;
+        }
+
+        /* Estilos para a Exibição de Imagens */
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 35px;
+        }
+
+        .image-container .image {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .image-container .image:nth-child(1) {
+            background-color: #ffcccb;
+        }
+
+        .image-container .image:nth-child(2) {
+            background-color: #b0c4de;
+        }
+
+        /* Estilos para Telas Pequenas */
+        @media screen and (max-width: 500px) {
+            body {
+                overflow-y: auto;
             }
 
-            .menu, .news, .highlights, .services, .results {
-                width: calc(100% - 40px);
+            .container {
+                grid-template-columns: 1fr;
             }
+
+            .A2, .A3, .A4, .A5 {
+                grid-column: span 3;
+            }
+
+            .A6 {
+                grid-area: 5/1/5/4;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: repeat(5, 180px);
+            }
+
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Seu Banner aqui</h1>
-    </header>
-
-    <div class="row">
-        <div class="menu">
-            <h2>Menu</h2>
-            <p>Conteúdo do menu aqui.</p>
+    <div class="A1">UNIVERSIDADE</div>
+    
+    <div class="container">
+        
+        <div class="box A2">
+            <div class="bar">Menu</div>
+            <div class="content">
+                <p>Título 1</p>
+                <p>Título 2</p>
+                <p>Título 3</p>
+            </div>
         </div>
 
-        <div class="news">
-            <h2>Notícias</h2>
-            <p>Conteúdo das notícias aqui.</p>
+        <div class="box A3">
+            <div class="bar">Notícias</div>
+            <div class="content">
+                <div><p>Título 1</p></div>
+                <div><p>Seu titulo com link</p></div>
+                <div><p>Título 2</p></div>
+                <div><p>Seu titulo com link</p></div>
+            </div>
         </div>
 
-        <div class="highlights">
-            <h2>Destaques</h2>
-            <p>Conteúdo dos destaques aqui.</p>
+        <div class="box A4">
+            <div class="bar">Destaque</div>
+            <div class="content">
+                <div class="image-container">
+                    <div class="image">
+                        <img src="uesc.jpg" alt="Imagem 1">
+                    </div>
+                    <div class="image">
+                        <img src="uesc.jpg" alt="Imagem 2">
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="box A5">
+            <div class="bar">Serviços</div>
+            <div class="content">Conteúdo A5</div>
+        </div>
+
+        <div class="box A6">
+            <div class="bar">Resultados</div>
+            <div class="content">Conteúdo A6</div>
+        </div>
+        
     </div>
 
-    <div class="row">
-        <div class="services">
-            <h2>Serviço</h2>
-            <p>Conteúdo do serviço aqui.</p>
-        </div>
-
-        <div class="results">
-            <h2>Resultados</h2>
-            <p>Conteúdo dos resultados aqui.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>Seu Rodapé Aqui</p>
-    </footer>
-
+    <div class="A7">FOOTER</div>
 </body>
 </html>
