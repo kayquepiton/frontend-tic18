@@ -2,220 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grid</title>
+    <title>UESC</title>
     <style>
-
-        /* Reset CSS padrão */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Estilos Gerais do Corpo do Documento */
         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Cor de fundo mais clara */
             margin: 0;
             padding: 0;
-            max-width: 1000px;
-            height: 100vh; /* Define a altura da página como 100% da altura da tela */
-            overflow-x: auto;
-            overflow-y: auto;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* Estilos do Grid */
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: repeat(2, 180px);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            grid-gap: 5px;
+            margin: 5px;
+            margin-top: 10px;
         }
 
-        /* Estilos Gerais das Caixas */
         .box {
-            position: relative;
-            background-color: lightgray;
-            margin-top: 5px;
-            margin-right: 5px;
+            background-color: #ffffff; /* Fundo branco */
+            border-radius: 8px;
+            height: 230px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilos das Barras de Título */
+        .box.A2 .content h6,
+        .box.A5 .content h6 {
+            margin-bottom: 7px; /* Espaçamento entre as palavras */
+            color: #333333; /* Texto mais escuro */
+            font-size: 14px; /* Tamanho maior */
+        }
+
         .bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #333;
-            color: white;
+            background-color: #333333;
+            color: #ffffff; /* Texto branco */
             text-align: center;
             padding: 5px;
+            font-size: 16px; /* Tamanho maior */
         }
 
-        /* Estilos do Conteúdo */
         .content {
-            padding: 10px;
-            font-size: 14px;
-            align-items: center;
-            margin-right: auto;
-        }
-
-        .content p {
-            margin: 5px 0;
+            padding: 20px;
         }
 
         .content img {
-            max-width: 70%;
-            height: auto;
+            align-items: center;
+            width: 100%;
+            height: 80px; /* Altura automática para manter as proporções */
+            border-radius: 4px;
             margin-bottom: 10px;
+        }
+
+        .box.A3 .content h6,
+        .box.A6 .content h6 {
+            color: #333333; /* Texto mais escuro */
+            font-size: 13px; /* Tamanho maior */
+        }
+
+        .content a {
+            color: #007bff;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 10px;
+            font-size: 13px; /* Tamanho maior */
         }
 
-        /* Estilos Específicos para Caixas A2 a A7 */
-        .A2, .A3, .A4, .A5, .A6{
-            background-color: rgb(112, 216, 164);
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: white;
+        .button-more {
+            background-color: #acaeb1; /* Cor azul */
+            color: #ffffff; /* Texto branco */
+            border: none;
+            padding: 5px 155px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px; /* Espaçamento entre o conteúdo e o botão */
+            cursor: pointer;
+            border-radius: 8px;
         }
 
-        .A2 .bar, .A3 .bar, .A4 .bar, .A5 .bar, .A6 .bar {
-            background-color: #333;
-        }
-
-        .A1 { 
-            background-color: rgb(112, 216, 164);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            height: 25%;
+        .A5, .A6 {
+            margin-bottom: 5px;
         }
 
         .A6 {
-            background-color: rgb(112, 216, 164);
-            margin-top: 10px;
-            grid-area: 2/2/3/4;
+            width: 201%;
+        }
+
+        .A1, .A7 {
+            background-color: #70ccd8; /* Cor azul mais clara */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
-            color: white;
+            font-size: 2em; /* Tamanho maior */
+            color: #ffffff; /* Texto branco */
+            height: 80px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .A7 { 
-            background-color: rgb(112, 216, 164);
-            display: flex;
-            grid-area: 3/2/3/4;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            margin-top: 10px;
-            height: 25%;
-        }
-
-        /* Estilos para a Exibição de Imagens */
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 35px;
-        }
-
-        .image-container .image {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .image-container .image:nth-child(1) {
-            background-color: #ffcccb;
-        }
-
-        .image-container .image:nth-child(2) {
-            background-color: #b0c4de;
-        }
-
-        /* Estilos para Telas Pequenas */
         @media screen and (max-width: 500px) {
-            body {
-                overflow-y: auto;
-            }
-
             .container {
                 grid-template-columns: 1fr;
             }
 
-            .A2, .A3, .A4, .A5 {
-                grid-column: span 3;
+            .box {
+                margin-bottom: 20px;
+            }
+
+            .box.A2, .box.A3, .box.A4, .box.A5, .box.A6 {
+                grid-column: span 1;
             }
 
             .A6 {
-                grid-area: 5/1/5/4;
+                width: 100%;
             }
-
-            .container {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: repeat(5, 180px);
-            }
-
         }
     </style>
 </head>
 <body>
-    <div class="A1">UNIVERSIDADE</div>
-    
+    <div class="A1">UESC</div>
+
     <div class="container">
-        
         <div class="box A2">
             <div class="bar">Menu</div>
             <div class="content">
-                <p>Título 1</p>
-                <p>Título 2</p>
-                <p>Título 3</p>
+                <h6>Centros e grupos de pesquisa</h6>
+                <h6>Internacional</h6>
+                <h6>Laboratórios</h6>
+                <h6>Mapa da cidade</h6>
+                <h6>Núcleos</h6>
+                <h6>Projetos</h6>
             </div>
         </div>
 
         <div class="box A3">
             <div class="bar">Notícias</div>
             <div class="content">
-                <div><p>Título 1</p></div>
-                <div><p>Seu titulo com link</p></div>
-                <div><p>Título 2</p></div>
-                <div><p>Seu titulo com link</p></div>
+                <h6>Reeleito, reitor da UESC agradece</h6>
+                <a href="link_para_reeleicao.html">Confiança na comunidade acadêmica</a>
+
+                <h6>Professor da UESC ministra curso no Rio Grande do Sul</h6>
+                <a href="link_para_curso_rs.html">Detalhes sobre o curso no Rio Grande do Sul</a>
+
+                <h6>Autor das ameaças à UESC é aprendido</h6>
+                <a href="link_para_ameacas_uesc.html">Desfecho da investigação</a>
+
+                <!-- Botão "Mais Notícias" -->
+                <button class="button-more" onclick="window.location.href='link_para_mais_noticias.html'">Mais Notícias</button>
             </div>
         </div>
 
         <div class="box A4">
             <div class="bar">Destaque</div>
             <div class="content">
-                <div class="image-container">
-                    <div class="image">
-                        <img src="uesc.jpg" alt="Imagem 1">
-                    </div>
-                    <div class="image">
-                        <img src="uesc.jpg" alt="Imagem 2">
-                    </div>
-                </div>
+                <img src="uesc1.jpg" alt="Imagem 1">
+                <img src="uesc2.jpg" alt="Imagem 2">
             </div>
         </div>
 
         <div class="box A5">
             <div class="bar">Serviços</div>
-            <div class="content">Conteúdo A5</div>
+            <div class="content">
+                <h6>Auditórios</h6>
+                <h6>Bibliotecas</h6>
+                <h6>Licitações</h6>
+                <h6>Pavilhão Max Menezes</h6>
+                <h6>Portal Acadêmico</h6>
+                <h6>Procotolo Digital</h6>
+                <h6>Peticionamento Eletrônico SEI</h6>
+            </div>
         </div>
 
         <div class="box A6">
             <div class="bar">Resultados</div>
-            <div class="content">Conteúdo A6</div>
+            <div class="content">
+                <h6>Seleção pública professor substituto</h6>
+                <a href="link_para_reeleicao.html">Confiança na comunidade acadêmica</a>
+
+                <h6>Processo seletivo professor visitante - PPGMC</h6>
+                <a href="link_para_eleicao_2024_2028.html">Expectativas para o próximo mandato</a>
+
+                <h6>Pós-graduação produção vegetal</h6>
+                <a href="link_para_curso_rs.html">Detalhes sobre o curso no Rio Grande do Sul</a>
+
+                <h6>Pós-graduação produção em ciência de saúde</h6>
+                <a href="link_para_ameacas_uesc.html">Desfecho da investigação</a>
+            </div>
         </div>
-        
     </div>
 
     <div class="A7">FOOTER</div>
