@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulários</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="formulario-container">
+        <h2>Monte seu roteiro turístico</h2>
+        <form id="formulario">
+            <div class="campo-formulario">
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome">
+                <i class="icon fas fa-user"></i> <!-- Ícone de usuário, usando FontAwesome -->
+            </div>
+
+            <div class="campo-formulario">
+                <!-- Alterado para um menu suspenso com opções fixas -->
+                <select id="destino" name="destino" style="width: 370px;">
+                    <option value="Salvador">Salvador</option>
+                    <option value="Fortaleza">Fortaleza</option>
+                    <option value="Campinas">Campinas</option>
+                </select>
+                <i class="icon fas fa-map-marker-alt"></i> <!-- Ícone de marcador de mapa -->
+            </div>
+
+            <div class="campo-formulario">
+                <input type="number" id="duracao" name="duracao" placeholder="Número de Dias">
+                <i class="icon fas fa-clock"></i> <!-- Ícone de relógio -->
+            </div>
+
+            <div class="campo-formulario">
+                <input type="url" id="url" name="url" placeholder="URL do Pacote (ex: ./imagens/salvador.jpg)">
+                <i class="icon fas fa-link"></i> <!-- Ícone de link -->
+            </div>
+
+            <div class="campo-formulario">
+                <textarea id="descricao" name="descricao" placeholder="Descrição do Roteiro"></textarea>
+                <i class="icon fas fa-file-alt"></i> <!-- Ícone de arquivo -->
+            </div>
+
+            <button type="button" onclick="inserirRoteiro()">Inserir</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="container-destinos">
+        <!-- Aqui serão inseridos os novos roteiros -->
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

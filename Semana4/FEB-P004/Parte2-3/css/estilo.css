@@ -1,0 +1,77 @@
+/* Estilos para o formulário */
+
+body {
+    font-family: 'Nunito', sans-serif; /* Fonte mais espaçada */
+}
+
+.formulario-container {
+    max-width: 400px; /* Aumentado a largura */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Cor de fundo do formulário */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: purple; /* Cor do texto do título */
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-formulario {
+    position: relative;
+}
+
+input,
+textarea,
+select {
+    width: calc(100% - 30px); /* Ajuste para adicionar espaço à esquerda */
+    padding: 12px;
+    border: 1px solid #ddd; /* Cor da borda dos campos */
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px; /* Espaçamento entre os campos */
+    margin-left: 30px; /* Espaçamento à esquerda */
+}
+
+input::placeholder,
+textarea::placeholder,
+select {
+    padding: 5px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: purple; /* Cor dos ícones */
+}
+
+button {
+    background-color: #2afa2a; /* Cor verde */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition-duration: 0.3s; /* Adicionando transição de 0.3 segundos */
+}
+
+button:hover {
+    background-color: #02b820; /* Cor verde mais escura */
+    color: #fff; /* Mudando a cor do texto ao passar o mouse */
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9); /* Reduzindo o tamanho do botão ao ser clicado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adicionando sombra ao ser clicado */
+}
