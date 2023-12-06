@@ -4,10 +4,10 @@ function inserirRoteiro() {
     var destino = document.getElementById('destino').value;
     var duracao = document.getElementById('duracao').value;
     var url = document.getElementById('url').value;
-    var descricao = document.getElementById('descricao').value;
+    var observacoes = document.getElementById('observacoes').value;
 
     // Validar se todos os campos foram preenchidos
-    if (!nome || !destino || !duracao || !url || !descricao) {
+    if (!nome || !destino || !duracao || !url || !observacoes) {
         alert('Por favor, preencha todos os campos do formulário.');
         return;
     }
@@ -15,6 +15,12 @@ function inserirRoteiro() {
     // Validar se foi selecionado um destino
     if (!destino) {
         alert('Por favor, selecione um destino válido.');
+        return;
+    }
+
+    // Validar se o número de dias é positivo
+    if (duracao < 0) {
+        alert('O número de dias não pode ser negativo.');
         return;
     }
 
@@ -51,7 +57,7 @@ function inserirRoteiro() {
     <div class="roteiro-preco" style="font-size: 1.5em; font-weight: bold; margin: 20px 0; color: purple;">R$${preco}</div>
     <div class="roteiro-obs" style="font-size: 1em; margin-bottom: 15px; color: purple;">Taxas Inclusas</div>
     <div class="roteiro-parcelamento" style="font-size: 1em; margin-bottom: 15px; color: purple;">Em até 10x sem Juros</div>
-    <button class="roteiro-comprar" style="background-color: #2afa2a; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em; transition-duration: 0.3s; color: #fff !important;">Comprar</button>
+    <button class="roteiro-comprar" onclick="comprarRoteiro('${nome}', '${destino}', ${duracao}, '${url}', '${observacoes}', ${preco})" style="background-color: #2afa2a; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.2em; transition-duration: 0.3s; color: #fff !important;">Comprar</button>
     `;
 
     novoRoteiro.innerHTML = estruturaHTML;
@@ -64,5 +70,19 @@ function inserirRoteiro() {
     document.getElementById('nome').value = '';
     document.getElementById('duracao').value = '';
     document.getElementById('url').value = '';
-    document.getElementById('descricao').value = '';
+    document.getElementById('observacoes').value = '';
+
+    // Rolar até o final da página
+    novoRoteiro.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function comprarRoteiro(nome, destino, duracao, url, observacoes, preco) {
+    // Enviar informações para o console log
+    console.log('Informações da compra:');
+    console.log('Nome:', nome);
+    console.log('Destino:', destino);
+    console.log('Duração:', duracao, 'diárias');
+    console.log('URL:', url);
+    console.log('Descrição:', observacoes);
+    console.log('Preço:', 'R$', preco);
 }

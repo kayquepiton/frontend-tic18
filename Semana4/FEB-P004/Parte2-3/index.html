@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulários</title>
+    <title>Roteiro</title>
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,32 +17,36 @@
         <form id="formulario">
             <div class="campo-formulario">
                 <input type="text" id="nome" name="nome" placeholder="Seu Nome">
-                <i class="icon fas fa-user"></i> <!-- Ícone de usuário, usando FontAwesome -->
+                <i class="icon fas fa-user"></i>
             </div>
 
             <div class="campo-formulario">
-                <!-- Alterado para um menu suspenso com opções fixas -->
                 <select id="destino" name="destino" style="width: 370px;">
                     <option value="Salvador">Salvador</option>
                     <option value="Fortaleza">Fortaleza</option>
                     <option value="Campinas">Campinas</option>
                 </select>
-                <i class="icon fas fa-map-marker-alt"></i> <!-- Ícone de marcador de mapa -->
+                <i class="icon fas fa-map-marker-alt"></i>
             </div>
 
             <div class="campo-formulario">
                 <input type="number" id="duracao" name="duracao" placeholder="Número de Dias">
-                <i class="icon fas fa-clock"></i> <!-- Ícone de relógio -->
+                <i class="icon fas fa-clock"></i>
             </div>
 
             <div class="campo-formulario">
-                <input type="url" id="url" name="url" placeholder="URL do Pacote (ex: ./imagens/salvador.jpg)">
-                <i class="icon fas fa-link"></i> <!-- Ícone de link -->
+                <input list="imagensList" id="url" name="url" placeholder="URL da imagem Pacote">
+                <datalist id="imagensList">
+                    <option value="./imagens/salvador.jpg">
+                    <option value="./imagens/campinas.jpg">
+                    <option value="./imagens/fortaleza.jpg">
+                </datalist>
+                <i class="icon fas fa-link"></i>
             </div>
 
             <div class="campo-formulario">
-                <textarea id="descricao" name="descricao" placeholder="Descrição do Roteiro"></textarea>
-                <i class="icon fas fa-file-alt"></i> <!-- Ícone de arquivo -->
+                <textarea id="observacoes" name="observacoes" placeholder="Observações do Roteiro"></textarea>
+                <i class="icon fas fa-file-alt"></i>
             </div>
 
             <button type="button" onclick="inserirRoteiro()">Inserir</button>
