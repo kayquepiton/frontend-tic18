@@ -1,0 +1,62 @@
+{
+    "menu": [
+        "Centros e grupos de pesquisa",
+        "Internacional",
+        "Laboratórios",
+        "Mapa da cidade",
+        "Núcleos",
+        "Projetos"
+    ],
+    "noticias": [
+        {
+            "titulo": "Reeleito, reitor da UESC agradece",
+            "link": "link_para_reeleicao.html",
+            "texto": "Confiança na comunidade acadêmica"
+        },
+        {
+            "titulo": "Professor da UESC ministra curso no Rio Grande do Sul",
+            "link": "link_para_curso_rs.html",
+            "texto": "Detalhes sobre o curso no Rio Grande do Sul"
+        },
+        {
+            "titulo": "Autor das ameaças à UESC é aprendido",
+            "link": "link_para_ameacas_uesc.html",
+            "texto": "Desfecho da investigação"
+        }
+    ],
+    "destaque": [
+        "uesc1.jpg",
+        "uesc2.jpg"
+    ],
+    "servicos": [
+        "Auditórios",
+        "Bibliotecas",
+        "Licitações",
+        "Pavilhão Max Menezes",
+        "Portal Acadêmico",
+        "Procotolo Digital",
+        "Peticionamento Eletrônico SEI"
+    ],
+    "resultados": [
+        {
+            "titulo": "Seleção pública professor substituto",
+            "link": "link_para_reeleicao.html",
+            "texto": "Confiança na comunidade acadêmica"
+        },
+        {
+            "titulo": "Processo seletivo professor visitante - PPGMC",
+            "link": "link_para_eleicao_2024_2028.html",
+            "texto": "Expectativas para o próximo mandato"
+        },
+        {
+            "titulo": "Pós-graduação produção vegetal",
+            "link": "link_para_curso_rs.html",
+            "texto": "Detalhes sobre o curso no Rio Grande do Sul"
+        },
+        {
+            "titulo": "Pós-graduação produção em ciência de saúde",
+            "link": "link_para_ameacas_uesc.html",
+            "texto": "Desfecho da investigação"
+        }
+    ]
+}
