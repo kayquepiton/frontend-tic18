@@ -1,70 +1,54 @@
-// Criando uma classe para representar a aplicação
-class UESCApp {
-    constructor() {
-        this.apiUrl = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bf818b953a844ddb9fe0df6528f6237e';
+// Certifique-se de incluir a biblioteca jQuery em seu projeto antes de usar este código.
+var UESCApp = /** @class */ (function () {
+    function UESCApp() {
+        this.apiUrl =
+            'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bf818b953a844ddb9fe0df6528f6237e';
     }
-
-    // Função para buscar dados da API e preencher a seção correspondente
-    buscarDadosAPI(apiUrl, tipo, container) {
-        // Usando crossorigin.me como proxy para evitar problemas de CORS
-        const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl);
-
-        fetch(proxyUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "ok" && Array.isArray(data.articles)) {
-                    this.renderizarItens(data.articles.slice(0, 3), container);
+    UESCApp.prototype.buscarDadosAPI = function (apiUrl, tipo, container) {
+        var _this = this;
+        var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl);
+        $.ajax({
+            url: proxyUrl,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status === 'ok' && Array.isArray(data.articles)) {
+                    _this.renderizarItens(data.articles.slice(0, 3), container);
                 }
-            })
-            .catch(error => {
-                console.error(`Erro ao buscar dados da API (${tipo}):`, error);
-            });
-    }
-
-    // Função para renderizar os itens na página
-    renderizarItens(itens, container) {
-        itens.forEach(item => {
-            var element = document.createElement('div');
-            element.classList.add('uesc-content');
-
-            var tituloElement = document.createElement('h6');
-            tituloElement.innerHTML = item.title || ''; // Título da notícia
-            element.appendChild(tituloElement);
-
-            var descricaoElement = document.createElement('p');
-            descricaoElement.innerHTML = item.description || ''; // Descrição da notícia
-            element.appendChild(descricaoElement);
-
-            var urlElement = document.createElement('a');
-            urlElement.href = item.url || '#'; // URL da notícia
-            urlElement.innerHTML = 'Leia mais';
-            element.appendChild(urlElement);
-
-            container.appendChild(element);
+            },
+            error: function (error) {
+                console.error("Erro ao buscar dados da API (".concat(tipo, "):"), error);
+            },
         });
-    }
-
-    // Função para inicializar a aplicação
-    iniciar() {
-        document.addEventListener('DOMContentLoaded', () => {
+    };
+    UESCApp.prototype.renderizarItens = function (itens, container) {
+        itens.forEach(function (item) {
+            var element = $('<div>').addClass('uesc-content');
+            var tituloElement = $('<h6>').html(item.title || ''); // Título da notícia
+            element.append(tituloElement);
+            var descricaoElement = $('<p>').html(item.description || ''); // Descrição da notícia
+            element.append(descricaoElement);
+            var urlElement = $('<a>').attr('href', item.url || '#').html('Leia mais'); // URL da notícia
+            element.append(urlElement);
+            container.append(element);
+        });
+    };
+    UESCApp.prototype.iniciar = function () {
+        var _this = this;
+        $(document).ready(function () {
             // Quadro "Notícias"
-            this.buscarDadosAPI(this.apiUrl, 'noticias', document.getElementById('noticias-container'));
-
+            _this.buscarDadosAPI(_this.apiUrl, 'noticias', $('#noticias-container'));
             // Quadro "Menu"
-            this.buscarDadosAPI(this.apiUrl, 'menu', document.getElementById('menu-container'));
-
+            _this.buscarDadosAPI(_this.apiUrl, 'menu', $('#menu-container'));
             // Quadro "Destaques"
-            this.buscarDadosAPI(this.apiUrl, 'destaque', document.getElementById('destaque-container'));
-
+            _this.buscarDadosAPI(_this.apiUrl, 'destaque', $('#destaque-container'));
             // Quadro "Serviços"
-            this.buscarDadosAPI(this.apiUrl, 'servicos', document.getElementById('servicos-container'));
-
+            _this.buscarDadosAPI(_this.apiUrl, 'servicos', $('#servicos-container'));
             // Quadro "Resultados"
-            this.buscarDadosAPI(this.apiUrl, 'resultados', document.getElementById('resultados-container'));
+            _this.buscarDadosAPI(_this.apiUrl, 'resultados', $('#resultados-container'));
         });
-    }
-}
-
+    };
+    return UESCApp;
+}());
 // Criando uma instância da aplicação e iniciando
-const uescApp = new UESCApp();
+var uescApp = new UESCApp();
 uescApp.iniciar();
