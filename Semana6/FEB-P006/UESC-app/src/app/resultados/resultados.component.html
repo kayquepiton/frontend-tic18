@@ -1,7 +1,17 @@
+<!-- resultados.component.html -->
 <div class="uesc-box uesc-A6">
-    <div class="uesc-bar">Resultados</div>
-    <div class="uesc-content" id="resultados-container">
-        <!-- Resultados serão adicionados aqui dinamicamente -->
-    </div>
-</div>
+  <div class="uesc-bar">Resultados</div>
+  <div class="uesc-content" id="resultados-container">
+    <ng-container *ngIf="resultados.length > 0; else noResultados">
+      <div *ngFor="let resultado of resultados" class="uesc-content-item">
+        <h6>{{ resultado.title || '' }}</h6>
+        <p>{{ resultado.description || '' }}</p>
+        <a [href]="resultado.url || '#'">Leia mais</a>
+      </div>
+    </ng-container>
 
+    <ng-template #noResultados>
+      <p>Nenhum resultado disponível no momento.</p>
+    </ng-template>
+  </div>
+</div>

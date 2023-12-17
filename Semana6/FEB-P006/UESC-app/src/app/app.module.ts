@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { ResultadosComponent } from './resultados/resultados.component';
 import { FooterComponent } from './footer/footer.component';
 import { UescContentComponent } from './uesc-content/uesc-content.component';
 import { BannerComponent } from './banner/banner.component';
+
+import { ApiService } from './api.service'; // Importe o ApiService
 
 @NgModule({
   declarations: [
@@ -26,9 +29,10 @@ import { BannerComponent } from './banner/banner.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, // Adicione o HttpClientModule aos imports
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService], // Adicione o ApiService aos providers
   bootstrap: [AppComponent]
 })
 export class AppModule { }

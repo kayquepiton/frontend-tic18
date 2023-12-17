@@ -1,7 +1,18 @@
+<!-- menu.component.html -->
 <div class="uesc-box uesc-A2">
     <div class="uesc-bar">Menu</div>
     <div class="uesc-content" id="menu-container">
-        <!-- Itens do Menu serão adicionados aqui dinamicamente -->
+      <ng-container *ngIf="menuItens.length > 0; else noMenuItens">
+        <div *ngFor="let item of menuItens" class="uesc-content-item">
+          <h6>{{ item.title || '' }}</h6>
+          <p>{{ item.description || '' }}</p>
+          <a [href]="item.url || '#'">Leia mais</a>
+        </div>
+      </ng-container>
+  
+      <ng-template #noMenuItens>
+        <p>Nenhum item de menu disponível no momento.</p>
+      </ng-template>
     </div>
-</div>
-
+  </div>
+  
