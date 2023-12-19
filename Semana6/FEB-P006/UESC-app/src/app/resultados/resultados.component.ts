@@ -12,14 +12,14 @@ export class ResultadosComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.buscarDados('health'); // Escolha o tópico "health"
+    this.buscarDados('Health'); // Escolha o tópico "Health"
   }
 
   buscarDados(tópico: string) {
     this.apiService.buscarDadosAPI(tópico).subscribe(
       (data: any) => {
         if (data.status === 'ok' && Array.isArray(data.articles)) {
-          this.resultados = data.articles.slice(0, 2);
+          this.resultados = data.articles.slice(0, 3);
           console.log(this.resultados);
         }
       },

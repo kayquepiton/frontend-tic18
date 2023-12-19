@@ -1,18 +1,8 @@
-<!-- destaque.component.html -->
 <div class="uesc-box uesc-A4">
-    <div class="uesc-bar">Destaque</div>
-    <div class="uesc-content" id="destaque-container">
-      <ng-container *ngIf="noticias.length > 0; else noNoticias">
-        <div *ngFor="let noticia of noticias" class="uesc-content-item">
-          <h6>{{ noticia.title || '' }}</h6>
-          <p>{{ noticia.description || '' }}</p>
-          <a [href]="noticia.url || '#'">Leia mais</a>
-        </div>
-      </ng-container>
-  
-      <ng-template #noNoticias>
-        <p>Nenhuma notícia disponível no momento.</p>
-      </ng-template>
+  <div class="uesc-bar">Destaque</div>
+  <div class="uesc-content" id="destaqueContent">
+    <div *ngFor="let noticia of noticias">
+      <img [src]="noticia.src" [alt]="noticia.alt">
     </div>
   </div>
-  
+</div>

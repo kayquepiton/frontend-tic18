@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>UESC</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="script/script.js" defer></script>
-    <script src="script/script-destaque.js"></script>
+    <script src="Scripts/menu-script.js"></script>
+    <script src="Scripts/servicos-script.js"></script>
+    <script src="Scripts/destaque-script.js"></script>
+    <script src="Scripts/noticias-script.js"></script>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
 </head>
-
 <body>
     <div class="uesc-A1">UESC</div>
 
@@ -17,38 +18,47 @@
         <div class="uesc-box uesc-A2">
             <div class="uesc-bar">Menu</div>
             <div class="uesc-content" id="menu-container">
-                <!-- Itens do Menu serão adicionados aqui dinamicamente -->
+                <!-- Conteúdo do menu será preenchido dinamicamente pelo JavaScript -->
             </div>
         </div>
 
         <div class="uesc-box uesc-A3">
             <div class="uesc-bar">Notícias</div>
             <div class="uesc-content" id="noticias-container">
-                <!-- Notícias serão adicionadas aqui dinamicamente -->
+                <!-- Conteúdo do menu será preenchido dinamicamente pelo JavaScript -->
+            </div>
+            <div class="uesc-content">
+                <button class="uesc-button-more" onclick="window.location.href='link_para_mais_noticias.html'">Mais Resultados</button>
             </div>
         </div>
 
         <div class="uesc-box uesc-A4">
             <div class="uesc-bar">Destaque</div>
-            <div class="uesc-content" id="destaqueContent"></div>
+            <div class="uesc-content" id="destaque-container">
+                <!-- Conteúdo do menu será preenchido dinamicamente pelo JavaScript -->
+            </div>
         </div>
 
         <div class="uesc-box uesc-A5">
             <div class="uesc-bar">Serviços</div>
             <div class="uesc-content" id="servicos-container">
-                <!-- Serviços serão adicionados aqui dinamicamente -->
+                <!-- Conteúdo do menu será preenchido dinamicamente pelo JavaScript -->
             </div>
         </div>
 
         <div class="uesc-box uesc-A6">
             <div class="uesc-bar">Resultados</div>
             <div class="uesc-content" id="resultados-container">
-                <!-- Resultados serão adicionados aqui dinamicamente -->
+                <!-- Conteúdo do menu será preenchido dinamicamente pelo JavaScript -->
+            </div>
+            <div class="uesc-content">
+                <button class="uesc-button-more" onclick="window.location.href='link_para_mais_noticias.html'">Mais Resultados</button>
             </div>
         </div>
+  
+        
     </div>
 
     <div class="uesc-A7">FOOTER</div>
 </body>
-
 </html>

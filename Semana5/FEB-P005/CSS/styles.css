@@ -38,8 +38,7 @@ body {
 }
 
 .uesc-content {
-    padding: 3px;
-    margin-bottom: 5px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -48,7 +47,6 @@ body {
     width: 100%;
     height: 80px;
     border-radius: 4px;
-    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -76,7 +74,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: -30px;
     cursor: pointer;
     border-radius: 8px;
     font-family: 'Helvetica', sans-serif;
@@ -86,8 +84,7 @@ body {
     width: 201%;
 }
 
-.uesc-A1,
-.uesc-A7 {
+.uesc-A1, .uesc-A7 {
     background-color: #70ccd8;
     display: flex;
     align-items: center;

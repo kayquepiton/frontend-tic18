@@ -1,17 +1,7 @@
 <!-- servicos.component.html -->
-<div class="uesc-box uesc-A4">
+<div class="uesc-box uesc-A5">
   <div class="uesc-bar">Serviços</div>
-  <div class="uesc-content" id="servicos-container">
-    <ng-container *ngIf="servicos.length > 0; else noServicos">
-      <div *ngFor="let servico of servicos" class="uesc-content-item">
-        <h6>{{ servico.title || '' }}</h6>
-        <p>{{ servico.description || '' }}</p>
-        <a [href]="servico.url || '#'">Leia mais</a>
-      </div>
-    </ng-container>
-
-    <ng-template #noServicos>
-      <p>Nenhum serviço disponível no momento.</p>
-    </ng-template>
+  <div class="uesc-content">
+    <h6 *ngFor="let servico of servicos">{{ servico }}</h6>
   </div>
 </div>

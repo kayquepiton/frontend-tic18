@@ -1,3 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.uesc-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 5px;
+    margin: 5px 10px;
+}
 
 .uesc-box {
     background-color: #ffffff;
@@ -18,8 +38,7 @@
 }
 
 .uesc-content {
-    padding: 3px;
-    margin-bottom: 5px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -66,8 +85,7 @@
     width: 201%;
 }
 
-.uesc-A1,
-.uesc-A7 {
+.uesc-A1, .uesc-A7 {
     background-color: #70ccd8;
     display: flex;
     align-items: center;

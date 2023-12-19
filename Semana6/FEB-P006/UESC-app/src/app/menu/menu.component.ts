@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu',
@@ -7,25 +7,24 @@ import { ApiService } from '../api.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  // Propriedades específicas do componente, se necessário
-  menuItens: any[] = [];
+  menuItens: string[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.buscarMenuItens('technology'); // Escolha o tópico "technology"
+    this.carregarDadosMenu();
   }
 
-  buscarMenuItens(tópico: string) {
-    this.apiService.buscarDadosAPI(tópico).subscribe(
-      (data: any) => {
-        if (data.status === 'ok' && Array.isArray(data.articles)) {
-          this.menuItens = data.articles.slice(0, 2);
-          console.log(this.menuItens);
-        }
+  carregarDadosMenu() {
+    const caminhoMenu = 'assets/json/menu-itens.json';
+
+    this.http.get<string[]>(caminhoMenu).subscribe(
+      (data: string[]) => {
+        console.log('Dados do JSON de menu:', data);
+        this.menuItens = data;
       },
       error => {
-        console.error('Erro ao buscar dados da API para o Menu:', error);
+        console.error('Erro ao carregar o JSON de menu.', error);
       }
     );
   }

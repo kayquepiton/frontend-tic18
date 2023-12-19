@@ -1,5 +1,6 @@
+// servicos.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-servicos',
@@ -7,24 +8,24 @@ import { ApiService } from '../api.service';
   styleUrls: ['./servicos.component.css']
 })
 export class ServicosComponent implements OnInit {
-  servicos: any[] = [];
+  servicos: string[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.buscarDados('sports'); // Escolha o tópico "sports"
+    this.carregarServicos();
   }
 
-  buscarDados(tópico: string) {
-    this.apiService.buscarDadosAPI(tópico).subscribe(
-      (data: any) => {
-        if (data.status === 'ok' && Array.isArray(data.articles)) {
-          this.servicos = data.articles.slice(0, 2); // Ajuste conforme necessário
-          console.log(this.servicos);
-        }
+  carregarServicos() {
+    const jsonPath = 'assets/json/servicos.json';
+
+    this.http.get<string[]>(jsonPath).subscribe(
+      (data: string[]) => {
+        console.log('Dados do JSON para Serviços:', data);
+        this.servicos = data;
       },
       error => {
-        console.error('Erro ao buscar dados da API para Serviços:', error);
+        console.error('Erro ao carregar o JSON para Serviços.', error);
       }
     );
   }

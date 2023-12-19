@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-destaque',
@@ -9,22 +9,22 @@ import { ApiService } from '../api.service';
 export class DestaqueComponent implements OnInit {
   noticias: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.buscarDados('entertainment'); // Escolha o tópico "entertainment"
+    this.carregarDadosLocais();
   }
 
-  buscarDados(tópico: string) {
-    this.apiService.buscarDadosAPI(tópico).subscribe(
-      (data: any) => {
-        if (data.status === 'ok' && Array.isArray(data.articles)) {
-          this.noticias = data.articles.slice(0, 2); // Ajuste conforme necessário
-          console.log(this.noticias);
-        }
+  carregarDadosLocais() {
+    const caminhoLocal = 'assets/json/imagens.json';
+    
+    this.http.get<any[]>(caminhoLocal).subscribe(
+      (data: any[]) => {
+        console.log('Dados do JSON local:', data);
+        this.noticias = data;
       },
       error => {
-        console.error('Erro ao buscar dados da API para Destaques:', error);
+        console.error('Erro ao carregar o JSON local.', error);
       }
     );
   }
