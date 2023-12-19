@@ -48,6 +48,7 @@ body {
     height: 80px;
     border-radius: 4px;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .uesc-content h6 {
@@ -74,7 +75,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    margin-top: -30px;
+    margin-top: -45px;
     cursor: pointer;
     border-radius: 8px;
     font-family: 'Helvetica', sans-serif;

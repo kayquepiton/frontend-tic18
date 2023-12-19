@@ -1,7 +1,9 @@
 class UESCApp {
     constructor() {
-        this.apiUrl =
-            'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bf818b953a844ddb9fe0df6528f6237e';
+        this.apiUrlResults =
+            'https://newsapi.org/v2/top-headlines?q=health&apiKey=bf818b953a844ddb9fe0df6528f6237e';
+        this.apiUrlNews =
+            'https://newsapi.org/v2/top-headlines?q=science&apiKey=bf818b953a844ddb9fe0df6528f6237e';
     }
 
     buscarDadosAPI(apiUrl, tipo, container) {
@@ -11,8 +13,8 @@ class UESCApp {
             dataType: 'json',
             success: (data) => {
                 if (data.status === 'ok' && Array.isArray(data.articles)) {
-                    this.renderizarItens(data.articles.slice(0, 3), container);
-                    this.adicionarEstilos(); // Adiciona estilos após renderizar os itens
+                    this.renderizarItens(data.articles.slice(0, 3), container, tipo);
+                    this.adicionarEstilos(container, tipo); // Adiciona estilos após renderizar os itens
                 }
             },
             error: (error) => {
@@ -21,29 +23,29 @@ class UESCApp {
         });
     }
 
-    renderizarItens(itens, container) {
+    renderizarItens(itens, container, tipo) {
         itens.forEach((item) => {
-            const element = $('<div>').addClass('noticias-container');
-            const tituloElement = $('<h6>').html(item.title || ''); // Título da notícia
+            const element = $('<div>').addClass(`${tipo}-container`);
+            const tituloElement = $('<h6>').html(item.title || ''); // Título do resultado ou notícia
             element.append(tituloElement);
-            const descricaoElement = $('<p>').html(item.description || ''); // Descrição da notícia
-            element.append(descricaoElement);
-            const urlElement = $('<a>').attr('href', item.url || '#').html('Leia mais'); // URL da notícia
+            const urlElement = $('<a>').attr('href', item.url || '#').html('Leia mais'); // URL do resultado ou notícia
             element.append(urlElement);
             container.append(element);
         });
+    }
 
+    adicionarEstilos(container, tipo) {
         // Adiciona o estilo para reduzir a margem inferior
-        container.find('.uesc-content').css('margin-bottom', '10px');
+        container.find(`.${tipo}-container`).css('margin-bottom', '10px');
     }
 
     iniciar() {
         $(document).ready(() => {
             // Quadro "Resultados"
-            this.buscarDadosAPI(this.apiUrl, 'resultados', $('#resultados-container'));
+            this.buscarDadosAPI(this.apiUrlResults, 'resultados', $('#resultados-container'));
 
             // Quadro "Notícias"
-            this.buscarDadosAPI(this.apiUrl, 'noticias', $('#noticias-container'));
+            this.buscarDadosAPI(this.apiUrlNews, 'noticias', $('#noticias-container'));
         });
     }
 }
