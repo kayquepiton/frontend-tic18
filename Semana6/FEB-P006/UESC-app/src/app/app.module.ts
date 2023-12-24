@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { NoticiasComponent } from './noticias/noticias.component';
@@ -29,8 +28,7 @@ import { ApiService } from './api.service'; // Importe o ApiService
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, // Adicione o HttpClientModule aos imports
-    AppRoutingModule
+    HttpClientModule // Adicione o HttpClientModule aos imports
   ],
   providers: [ApiService], // Adicione o ApiService aos providers
   bootstrap: [AppComponent]
