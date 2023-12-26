@@ -1,5 +1,7 @@
-<app-carrinho></app-carrinho>
-<app-classes></app-classes>
-<app-objetos></app-objetos>
-<app-propriedades></app-propriedades>
-<app-valor-propriedade></app-valor-propriedade>
+<!-- app.component.html -->
+
+<div class="container">
+    <app-classes (selecionarCategoria)="onCategoriaSelecionada($event)" (selecionarNomesVeiculos)="onNomesVeiculosSelecionados($event)"></app-classes>
+    <app-objetos [categoriaSelecionada]="categoriaSelecionada" [veiculos]="veiculos"></app-objetos>
+</div>
+  

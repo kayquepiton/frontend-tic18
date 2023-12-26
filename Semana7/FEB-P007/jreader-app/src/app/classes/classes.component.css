@@ -1,0 +1,49 @@
+/* classes.component.css */
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.botao-laranja,
+.botao-azul {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.botao-laranja {
+  background-color: orange;
+  color: white;
+}
+
+.botao-azul {
+  background-color: blue;
+  color: white;
+}
+
+.botao-azul:hover {
+  background-color: darkblue;
+}
+
+.botao-azul[disabled] {
+  background-color: #cccccc;
+  color: #666666; /* Adicionado para melhorar a legibilidade do texto */
+  cursor: not-allowed;
+}
+
+.botao-laranja[disabled] {
+  background-color: orange;
+  color: white;
+  cursor: not-allowed;
+  /* Adicione mais estilos conforme necessário para o botão laranja desativado */
+}

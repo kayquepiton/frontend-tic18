@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+// app.component.ts
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  constructor(private titleService: Title) {}
+export class AppComponent {
+  categoriaSelecionada: string | null = null;
+  veiculos: { Name: string }[] = [];
+  nomesVeiculos: string[] = [];
 
-  ngOnInit() {
-    // Define o título inicial da aba
-    this.titleService.setTitle('UESC-app');
+  onCategoriaSelecionada(categoria: string) {
+    this.categoriaSelecionada = categoria;
+    console.log('Categoria selecionada:', categoria);
   }
 
-  alterarTitulo() {
-    // Método para alterar dinamicamente o título da aba
-    this.titleService.setTitle('Novo Título da Aba');
+  onNomesVeiculosSelecionados(nomesVeiculos: string[]) {
+    // Converta os nomes dos veículos em objetos correspondentes
+    this.veiculos = nomesVeiculos.map(nome => ({ Name: nome }));
+    console.log('Array completo de veículos no componente pai:', this.veiculos);
   }
 }
