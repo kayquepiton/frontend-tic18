@@ -1,8 +1,7 @@
 <!-- classes.component.html -->
 
-<div>
-  <input type="file" (change)="onFileSelected($event)" accept=".json" style="margin-bottom: 10px;">
-</div>
+<input type="file" (change)="onFileSelected($event)" accept=".json" style="margin-bottom: 10px;">
+
 <div class="categorias">
   <button class="botao-laranja" [disabled]="!jsonData">Categorias</button>
   <button class="botao-azul" (click)="emitirCategoria('Avioes')" [disabled]="!jsonData">Aviões</button>

@@ -14,6 +14,25 @@ export class ObjetosComponent implements OnChanges {
   // Adicione o EventEmitter para emitir o nome do veículo selecionado
   @Output() selecionarVeiculo = new EventEmitter<any>();
 
+  @Output() nomesVeiculosSelecionados = new EventEmitter<string[]>();
+
+  // Método onde você obtém os nomes dos veículos e emite o evento
+  emitirNomesVeiculosSelecionados() {
+    // Lógica para obter os nomes dos veículos
+    const nomesVeiculos: string[] = this.obterNomesVeiculos();
+
+    // Verifica se nomesVeiculos é um array válido antes de emitir o evento
+    if (nomesVeiculos && nomesVeiculos.length > 0) {
+      this.nomesVeiculosSelecionados.emit(nomesVeiculos);
+    }
+  }
+
+  // Lógica para obter os nomes dos veículos
+  private obterNomesVeiculos(): string[] {
+    // Implemente a lógica para obter os nomes dos veículos aqui
+    return ['Veiculo1', 'Veiculo2', 'Veiculo3'];  // Substitua pelo seu código real
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['veiculos'] && changes['veiculos'].currentValue) {
       const veiculos = changes['veiculos'].currentValue as { Name: string }[];

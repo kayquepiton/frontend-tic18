@@ -12,6 +12,7 @@ export class AppComponent {
   veiculos: any[] = [];
   veiculoSelecionado: string | null = null;
   nomesVeiculos: string[] = [];
+  tituloSelecionado: string | null = null;
 
   onCategoriaSelecionada(categoria: string) {
     this.categoriaSelecionada = categoria;
@@ -31,6 +32,12 @@ export class AppComponent {
   onNomesVeiculosSelecionados(nomesVeiculos: string[]) {
     // Implemente a lógica necessária aqui
     console.log('Nomes dos veículos no componente pai:', nomesVeiculos);
+  }
+
+  // Método para lidar com a seleção do título em propriedades
+  onTituloSelecionado(titulo: string) {
+    this.tituloSelecionado = titulo;
+    console.log('Título selecionado:', titulo);
   }
   
 }

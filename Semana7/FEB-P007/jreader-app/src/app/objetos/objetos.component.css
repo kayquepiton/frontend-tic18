@@ -1,14 +1,12 @@
 /* objetos.component.css */
 
-/* styles.css (ou o nome do seu arquivo de estilos global) */
-
 /* Botão laranja com o nome do veículo */
 .laranja {
   background-color: orange;
   color: white;
   display: inline-block;
   padding: 8px 15px;
-  margin-bottom: 20px;
+  margin-top: 40px;
   border: none;
   cursor: pointer;
   font-size: 14px;

@@ -1,0 +1,38 @@
+/* objetos.component.css */
+
+/* Botão laranja com o nome do veículo */
+.laranja {
+    background-color: orange;
+    color: white;
+    display: block; /* Alterado de inline-block para block */
+    padding: 8px 15px;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Botões azuis com os outros nomes do veículo */
+.azul {
+    background-color: blue;
+    color: white;
+    margin-top: 5px; /* Adiciona margem no topo para separar do botão laranja */
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.azul:hover {
+    background-color: darkblue;
+}
+
+.azul[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}

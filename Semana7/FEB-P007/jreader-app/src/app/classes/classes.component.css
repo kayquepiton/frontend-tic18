@@ -1,8 +1,6 @@
 /* classes.component.css */
 
-/* styles.css (ou o nome do seu arquivo de estilos global) */
-
-/* Botão laranja com o nome do veículo */
+/* Botão laranja com o nome do veículo principal */
 .laranja {
   background-color: orange;
   color: white;
@@ -17,7 +15,7 @@
   border-radius: 3px;
 }
 
-/* Botões azuis com os outros nomes do veículo */
+/* Contêiner para botões azuis com nomes de veículos */
 .botoes-azuis {
   margin-top: 10px;
   display: flex;
@@ -25,6 +23,7 @@
   align-items: flex-start;
 }
 
+/* Botão azul com nome de veículo */
 .azul {
   background-color: blue;
   color: white;
@@ -36,17 +35,19 @@
   transition: background-color 0.3s;
 }
 
+/* Efeito hover para o botão azul */
 .azul:hover {
   background-color: darkblue;
 }
 
+/* Estilo para botão azul desabilitado */
 .azul[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
 }
 
-/* Botão laranja com a categoria selecionada */
+/* Botão laranja para a categoria selecionada */
 .botao-laranja {
   background-color: orange;
   color: white;
@@ -58,17 +59,19 @@
   transition: background-color 0.3s;
 }
 
+/* Efeito hover para o botão laranja */
 .botao-laranja:hover {
   background-color: darkorange;
 }
 
+/* Estilo para botão laranja desabilitado */
 .botao-laranja[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
 }
 
-/* Botões azuis com os nomes dos veículos */
+/* Botão azul com nome de veículo dentro da categoria */
 .botao-azul {
   background-color: blue;
   color: white;
@@ -80,10 +83,12 @@
   transition: background-color 0.3s;
 }
 
+/* Efeito hover para o botão azul dentro da categoria */
 .botao-azul:hover {
   background-color: darkblue;
 }
 
+/* Estilo para botão azul desabilitado dentro da categoria */
 .botao-azul[disabled] {
   background-color: #cccccc;
   color: #666666;
