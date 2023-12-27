@@ -1,1 +1,14 @@
-<p>propriedades works!</p>
+<!-- propriedades.component.html -->
+
+<!-- Botão laranja com o nome do veículo -->
+<div>
+    <button class="laranja" *ngIf="veiculoSelecionado">{{ veiculoSelecionado.Name }}</button>
+</div>
+  
+<!-- Botões azuis com os outros nomes do veículo -->
+<div class="botoes-azuis">
+    <button class="azul" *ngFor="let nomeVeiculo of getNomesVeiculos()" (click)="emitirVeiculoSelecionado(nomeVeiculo)">
+        {{ nomeVeiculo }}
+    </button>
+</div>
+  

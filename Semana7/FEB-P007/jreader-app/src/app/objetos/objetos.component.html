@@ -1,11 +1,12 @@
 <!-- objetos.component.html -->
 
-<!-- Adicione o botão laranja com o nome da categoria -->
 <div>
   <button class="laranja" *ngIf="categoriaSelecionada">{{ categoriaSelecionada }}</button>
 </div>
 
 <!-- Botões azuis com os nomes dos veículos -->
 <div class="botoes-azuis">
-  <button class="azul" *ngFor="let veiculo of veiculos">{{ veiculo.Name }}</button>
+  <button class="azul" *ngFor="let veiculo of veiculos" (click)="selecionarVeiculoClick(veiculo)">
+    {{ veiculo.Name }}
+  </button>
 </div>

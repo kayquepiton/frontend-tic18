@@ -1,6 +1,7 @@
 // objetos.component.ts
 
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-objetos',
@@ -10,14 +11,25 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 export class ObjetosComponent implements OnChanges {
   @Input() categoriaSelecionada: string | null = null;
   @Input() veiculos: { Name: string }[] = [];
-  @Input() nomesVeiculos: string[] = [];
+  // Adicione o EventEmitter para emitir o nome do veículo selecionado
+  @Output() selecionarVeiculo = new EventEmitter<any>();
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['veiculos'] && changes['veiculos'].currentValue) {
       const veiculos = changes['veiculos'].currentValue as { Name: string }[];
       console.log('Veículos recebidos:', veiculos);
-
-      // Adicione o código para processar o array completo de veículos conforme necessário.
+      
+      // Restante do código...
     }
+  }
+
+  // Altere o método para emitir o objeto do veículo
+  selecionarVeiculoClick(veiculo: any) {
+    this.selecionarVeiculo.emit(veiculo);
+    console.log('Veículo selecionado foi:', veiculo);
+  }
+
+  emitirVeiculoSelecionado(veiculo: string) {
+    this.selecionarVeiculo.emit(veiculo);
   }
 }

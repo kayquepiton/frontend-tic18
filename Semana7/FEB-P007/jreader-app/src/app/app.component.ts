@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   categoriaSelecionada: string | null = null;
-  veiculos: { Name: string }[] = [];
+  veiculos: any[] = [];
+  veiculoSelecionado: string | null = null;
   nomesVeiculos: string[] = [];
 
   onCategoriaSelecionada(categoria: string) {
@@ -17,9 +18,19 @@ export class AppComponent {
     console.log('Categoria selecionada:', categoria);
   }
 
-  onNomesVeiculosSelecionados(nomesVeiculos: string[]) {
-    // Converta os nomes dos veículos em objetos correspondentes
-    this.veiculos = nomesVeiculos.map(nome => ({ Name: nome }));
-    console.log('Array completo de veículos no componente pai:', this.veiculos);
+  onVeiculosSelecionados(veiculos: { Name: string }[]) {
+    this.veiculos = veiculos;
+    console.log('Veículos no componente pai:', veiculos);
   }
+
+  onVeiculoSelecionado(veiculo: string) {
+    this.veiculoSelecionado = veiculo;
+    console.log('Veículo selecionado:', veiculo);
+  }
+
+  onNomesVeiculosSelecionados(nomesVeiculos: string[]) {
+    // Implemente a lógica necessária aqui
+    console.log('Nomes dos veículos no componente pai:', nomesVeiculos);
+  }
+  
 }

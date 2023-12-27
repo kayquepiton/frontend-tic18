@@ -1,7 +1,8 @@
 <!-- app.component.html -->
 
 <div class="container">
-    <app-classes (selecionarCategoria)="onCategoriaSelecionada($event)" (selecionarNomesVeiculos)="onNomesVeiculosSelecionados($event)"></app-classes>
-    <app-objetos [categoriaSelecionada]="categoriaSelecionada" [veiculos]="veiculos"></app-objetos>
-</div>
+    <app-classes (selecionarCategoria)="onCategoriaSelecionada($event)" (selecionarVeiculos)="onVeiculosSelecionados($event)"></app-classes>
+    <app-objetos [categoriaSelecionada]="categoriaSelecionada" [veiculos]="veiculos" (selecionarVeiculo)="onVeiculoSelecionado($event)"></app-objetos>
+    <app-propriedades [veiculos]="veiculos" [veiculoSelecionado]="veiculoSelecionado"></app-propriedades>
+  </div>
   

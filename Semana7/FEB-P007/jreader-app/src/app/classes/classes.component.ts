@@ -15,7 +15,7 @@ interface Veiculo {
 })
 export class ClassesComponent {
   @Output() selecionarCategoria = new EventEmitter<string>();
-  @Output() selecionarNomesVeiculos = new EventEmitter<string[]>();
+  @Output() selecionarVeiculos = new EventEmitter<Veiculo[]>();
   jsonData: any;
 
   onFileSelected(event: any) {
@@ -36,17 +36,16 @@ export class ClassesComponent {
   emitirCategoria(categoria: string) {
     console.log('Método emitirCategoria chamado com categoria:', categoria);
     this.selecionarCategoria.emit(categoria);
-    this.emitirNomesVeiculos(categoria);
+    this.emitirVeiculos(categoria);
   }
   
 
-  emitirNomesVeiculos(categoria: string) {
+  emitirVeiculos(categoria: string) {
     const veiculos: Veiculo[] = this.jsonData[categoria] || [];
-    const nomesVeiculos = veiculos.slice(0, 3).map(veiculo => veiculo.Name);
-    this.selecionarNomesVeiculos.emit(nomesVeiculos);
-  
-    // Adicione esta linha para imprimir os nomes dos veículos no console
-    console.log('Nomes dos veículos emitidos:', nomesVeiculos);
+    this.selecionarVeiculos.emit(veiculos);
+
+    // Adicione esta linha para imprimir os veículos no console
+    console.log('Veículos emitidos:', veiculos);
   }
   
 }
