@@ -1,10 +1,8 @@
 /* objetos.component.css */
 
-.veiculos {
-  display: flex;
-  flex-wrap: wrap;
-}
+/* styles.css (ou o nome do seu arquivo de estilos global) */
 
+/* Botão laranja com o nome do veículo */
 .laranja {
   background-color: orange;
   color: white;
@@ -15,11 +13,11 @@
   cursor: pointer;
   font-size: 14px;
   text-align: left;
-  margin-left: 5px;
   text-decoration: none;
   border-radius: 3px;
 }
 
+/* Botões azuis com os outros nomes do veículo */
 .botoes-azuis {
   margin-top: 10px;
   display: flex;
@@ -48,8 +46,9 @@
   cursor: not-allowed;
 }
 
-.veiculo-button {
-  background-color: blue;
+/* Botão laranja com a categoria selecionada */
+.botao-laranja {
+  background-color: orange;
   color: white;
   padding: 10px;
   margin: 5px;
@@ -59,11 +58,34 @@
   transition: background-color 0.3s;
 }
 
-.veiculo-button:hover {
+.botao-laranja:hover {
+  background-color: darkorange;
+}
+
+.botao-laranja[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+/* Botões azuis com os nomes dos veículos */
+.botao-azul {
+  background-color: blue;
+  color: white;
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+
+.botao-azul:hover {
   background-color: darkblue;
 }
 
-.veiculo-button[disabled] {
+.botao-azul[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;

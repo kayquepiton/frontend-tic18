@@ -1,14 +1,11 @@
 /* classes.component.css */
 
-.categorias {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
+/* styles.css (ou o nome do seu arquivo de estilos global) */
 
-.botao-laranja,
-.botao-azul {
+/* Botão laranja com o nome do veículo */
+.laranja {
+  background-color: orange;
+  color: white;
   display: inline-block;
   padding: 8px 15px;
   margin-bottom: 20px;
@@ -18,17 +15,69 @@
   text-align: left;
   text-decoration: none;
   border-radius: 3px;
+}
+
+/* Botões azuis com os outros nomes do veículo */
+.botoes-azuis {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.azul {
+  background-color: blue;
+  color: white;
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
   transition: background-color 0.3s;
 }
 
+.azul:hover {
+  background-color: darkblue;
+}
+
+.azul[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+/* Botão laranja com a categoria selecionada */
 .botao-laranja {
   background-color: orange;
   color: white;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
 }
 
+.botao-laranja:hover {
+  background-color: darkorange;
+}
+
+.botao-laranja[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+/* Botões azuis com os nomes dos veículos */
 .botao-azul {
   background-color: blue;
   color: white;
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
 }
 
 .botao-azul:hover {
@@ -37,13 +86,13 @@
 
 .botao-azul[disabled] {
   background-color: #cccccc;
-  color: #666666; /* Adicionado para melhorar a legibilidade do texto */
+  color: #666666;
   cursor: not-allowed;
 }
 
-.botao-laranja[disabled] {
-  background-color: orange;
-  color: white;
-  cursor: not-allowed;
-  /* Adicione mais estilos conforme necessário para o botão laranja desativado */
+/* Ajuste para colocar os botões azuis abaixo do botão laranja */
+.categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
