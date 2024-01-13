@@ -1,5 +1,4 @@
 // app.component.ts
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,10 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   categoriaSelecionada: string | null = null;
-  veiculos: any[] = [];
+  veiculos: { Name: string }[] = [];
   veiculoSelecionado: string | null = null;
   nomesVeiculos: string[] = [];
   tituloSelecionado: string | null = null;
+
+  // Variável para controlar a exibição do componente app-adicionar-objeto
+  mostrarAdicionarObjeto: boolean = false;
 
   onCategoriaSelecionada(categoria: string) {
     this.categoriaSelecionada = categoria;
@@ -38,6 +40,8 @@ export class AppComponent {
   onTituloSelecionado(titulo: string) {
     this.tituloSelecionado = titulo;
     console.log('Título selecionado:', titulo);
+
+    // Mostrar o componente app-adicionar-objeto quando o título for selecionado
+    this.mostrarAdicionarObjeto = true;
   }
-  
 }

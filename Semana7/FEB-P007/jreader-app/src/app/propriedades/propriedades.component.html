@@ -1,15 +1,8 @@
 <!-- propriedades.component.html -->
 
-<!-- Botão laranja com o nome do veículo -->
-<div>
-    <button class="laranja" *ngIf="veiculoSelecionado">{{ veiculoSelecionado.Name }}</button>
+<div class="categorias" appAlinharBotoes style="margin-top: 30px;">
+  <button class="botao-laranja" *ngIf="veiculoSelecionado">{{ veiculoSelecionado.Name }}</button>
+  <button class="botao-azul" *ngFor="let nomeVeiculo of getNomesVeiculos()" (click)="emitirTituloSelecionado(nomeVeiculo)">{{ nomeVeiculo }}</button>
 </div>
-
-<!-- Botões azuis com os outros nomes do veículo -->
-<div class="botoes-azuis">
-    <button class="botao-azul" *ngFor="let nomeVeiculo of getNomesVeiculos()" (click)="emitirTituloSelecionado(nomeVeiculo)">
-      {{ nomeVeiculo }}
-    </button>
-  </div>
   
   

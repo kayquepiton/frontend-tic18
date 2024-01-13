@@ -1,21 +1,24 @@
-/* objetos.component.css */
+/* classes.component.css */
 
-/* Botão laranja com o nome do veículo */
+/* Botão laranja com o nome do veículo principal */
 .laranja {
   background-color: orange;
   color: white;
   display: inline-block;
   padding: 8px 15px;
-  margin-top: 40px;
+  margin-bottom: 20px;
   border: none;
   cursor: pointer;
   font-size: 14px;
   text-align: left;
   text-decoration: none;
   border-radius: 3px;
+  width: 150px; /* Adicionando largura fixa */
+  max-width: 150px; /* Definindo largura máxima */
+  min-width: 150px; /* Definindo largura mínima */
 }
 
-/* Botões azuis com os outros nomes do veículo */
+/* Contêiner para botões azuis com nomes de veículos */
 .botoes-azuis {
   margin-top: 10px;
   display: flex;
@@ -23,7 +26,8 @@
   align-items: flex-start;
 }
 
-.azul {
+/* Botão azul com nome de veículo */
+.botao-azul {
   background-color: blue;
   color: white;
   margin: 5px;
@@ -32,19 +36,24 @@
   cursor: pointer;
   border-radius: 3px;
   transition: background-color 0.3s;
+  width: 150px; /* Adicionando largura fixa */
+  max-width: 150px; /* Definindo largura máxima */
+  min-width: 150px; /* Definindo largura mínima */
 }
 
-.azul:hover {
+/* Efeito hover para o botão azul */
+.botao-azul:hover {
   background-color: darkblue;
 }
 
-.azul[disabled] {
+/* Estilo para botão azul desabilitado */
+.botao-azul[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
 }
 
-/* Botão laranja com a categoria selecionada */
+/* Botão laranja para a categoria selecionada */
 .botao-laranja {
   background-color: orange;
   color: white;
@@ -54,19 +63,24 @@
   border: none;
   border-radius: 3px;
   transition: background-color 0.3s;
+  width: 150px; /* Adicionando largura fixa */
+  max-width: 150px; /* Definindo largura máxima */
+  min-width: 150px; /* Definindo largura mínima */
 }
 
+/* Efeito hover para o botão laranja */
 .botao-laranja:hover {
   background-color: darkorange;
 }
 
+/* Estilo para botão laranja desabilitado */
 .botao-laranja[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
 }
 
-/* Botões azuis com os nomes dos veículos */
+/* Botão azul com nome de veículo dentro da categoria */
 .botao-azul {
   background-color: blue;
   color: white;
@@ -75,16 +89,27 @@
   border: none;
   cursor: pointer;
   border-radius: 3px;
-  margin-left: 20px;
   transition: background-color 0.3s;
+  width: 150px; /* Adicionando largura fixa */
+  max-width: 150px; /* Definindo largura máxima */
+  min-width: 150px; /* Definindo largura mínima */
 }
 
+/* Efeito hover para o botão azul dentro da categoria */
 .botao-azul:hover {
   background-color: darkblue;
 }
 
+/* Estilo para botão azul desabilitado dentro da categoria */
 .botao-azul[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
+}
+
+/* Ajuste para colocar os botões azuis abaixo do botão laranja */
+.categorias {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

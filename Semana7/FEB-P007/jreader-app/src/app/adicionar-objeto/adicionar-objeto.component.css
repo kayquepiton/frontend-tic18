@@ -1,7 +1,7 @@
 /* classes.component.css */
 
-/* Botão laranja com o nome do veículo principal */
-.laranja {
+/* Botão roxo com o nome do veículo principal */
+.roxo {
   background-color: orange;
   color: white;
   display: inline-block;
@@ -53,9 +53,9 @@
   cursor: not-allowed;
 }
 
-/* Botão laranja para a categoria selecionada */
-.botao-laranja {
-  background-color: orange;
+/* Botão roxo para a categoria selecionada */
+.botao-roxo {
+  background-color: purple;
   color: white;
   padding: 10px;
   margin: 5px;
@@ -68,13 +68,13 @@
   min-width: 150px; /* Definindo largura mínima */
 }
 
-/* Efeito hover para o botão laranja */
-.botao-laranja:hover {
+/* Efeito hover para o botão roxo */
+.botao-roxo:hover {
   background-color: darkorange;
 }
 
-/* Estilo para botão laranja desabilitado */
-.botao-laranja[disabled] {
+/* Estilo para botão roxo desabilitado */
+.botao-roxo[disabled] {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
@@ -107,7 +107,7 @@
   cursor: not-allowed;
 }
 
-/* Ajuste para colocar os botões azuis abaixo do botão laranja */
+/* Ajuste para colocar os botões azuis abaixo do botão roxo */
 .categorias {
   display: flex;
   flex-direction: column;

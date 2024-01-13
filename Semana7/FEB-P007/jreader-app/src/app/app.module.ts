@@ -8,7 +8,9 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ClassesComponent } from './classes/classes.component';
 import { ObjetosComponent } from './objetos/objetos.component';
 import { PropriedadesComponent } from './propriedades/propriedades.component';
-import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade.component'; // Importe o ApiService
+import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade.component';
+import { AdicionarObjetoComponent } from './adicionar-objeto/adicionar-objeto.component';
+import { AlinharBotoesDirective } from './alinhar-botoes.directive'; // Importe o ApiService
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade
     ClassesComponent,
     ObjetosComponent,
     PropriedadesComponent,
-    ValorPropriedadeComponent
+    ValorPropriedadeComponent,
+    AdicionarObjetoComponent,
+    AlinharBotoesDirective
   ],
   imports: [
     BrowserModule,
