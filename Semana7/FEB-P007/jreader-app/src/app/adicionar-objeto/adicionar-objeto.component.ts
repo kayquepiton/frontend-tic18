@@ -1,38 +1,40 @@
 // adicionar-objeto.component.ts
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-adicionar-objeto',
   templateUrl: './adicionar-objeto.component.html',
   styleUrls: ['./adicionar-objeto.component.css'],
 })
-export class AdicionarObjetoComponent implements OnInit {
-  @Input() veiculoSelecionado: string | { Name: string } | null = null;
-  veiculoSelecionadoNome: string | null = null;
+export class AdicionarObjetoComponent implements OnChanges {
+  constructor(private cdr: ChangeDetectorRef) {}
+  @Input() tituloSelecionado: string = '';
+  @Input() veiculoSelecionado: any;
+  valorExibido: string = ''; // Adicionamos uma propriedade para armazenar o valor exibido
 
-  ngOnInit() {
-    this.extrairNomeVeiculoSelecionado();
-  }
-
-  extrairNomeVeiculoSelecionado() {
-    if (this.veiculoSelecionado !== null) {
-      if (typeof this.veiculoSelecionado === 'string') {
-        this.veiculoSelecionadoNome = this.veiculoSelecionado;
-      } else {
-        this.veiculoSelecionadoNome = this.veiculoSelecionado.Name || null;
-      }
-    } else {
-      this.veiculoSelecionadoNome = null;
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['tituloSelecionado'] && !changes['tituloSelecionado'].firstChange) {
+      this.exibirDetalhes();
     }
   }
 
-  adicionarVeiculo() {
-    // Lógica para o botão Laranja (nome do veículo)
-    console.log('Botão Laranja clicado para veículo:', this.veiculoSelecionadoNome);
+  ngAfterViewInit() {
+    console.log('Título Selecionado:', this.tituloSelecionado);
+    console.log('Veículo Selecionado:', this.veiculoSelecionado);
+    this.exibirDetalhes();
+    console.log('Valor Exibido:', this.valorExibido);
+  
+    // Força a detecção de mudanças manualmente
+    this.cdr.detectChanges();
+  }  
+
+  exibirDetalhes() {
+    console.log(`Título Selecionado: ${this.tituloSelecionado}`);
+    this.valorExibido = this.veiculoSelecionado[this.tituloSelecionado];
   }
 
-  adicionarObjeto() {
-    // Lógica para o botão Azul (Adicionar)
-    console.log('Botão Azul (Adicionar) clicado');
+  exibirValor() {
+    this.valorExibido = this.veiculoSelecionado[this.tituloSelecionado];
+    console.log(`Valor do Título: ${this.veiculoSelecionado[this.tituloSelecionado]}`);
   }
 }
