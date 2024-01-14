@@ -12,3 +12,7 @@
   app-propriedades {
     margin: 0 10px; /* Ajuste a margem conforme necessário */
   }
+
+  .rodape-botoes {
+    margin-top: -450px;
+  }

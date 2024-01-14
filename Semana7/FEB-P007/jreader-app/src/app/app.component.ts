@@ -13,6 +13,7 @@ export class AppComponent {
   nomesVeiculos: string[] = [];
   tituloSelecionado: string | null = null;
   mostrarAdicionarObjeto: boolean = false;
+  exibirBotoesRodape: boolean = false;
 
   onCategoriaSelecionada(categoria: string) {
     this.categoriaSelecionada = categoria;
@@ -34,4 +35,16 @@ export class AppComponent {
     this.tituloSelecionado = titulo;
     this.mostrarAdicionarObjeto = true;
   }
+
+  onAdicionarAoCarrinhoClicado(nomeVeiculo: string) {
+    // Lógica para quando o botão "Adicionar ao carrinho" for clicado
+    console.log(`Botão "Adicionar ao carrinho" clicado. Nome do veículo: ${nomeVeiculo}`);
+  
+    // Adiciona o nome do veículo à lista de nomesVeiculos
+    this.nomesVeiculos.push(nomeVeiculo);
+  
+    // Define a visibilidade dos botões no rodapé como true
+    this.exibirBotoesRodape = true;
+  }
+
 }

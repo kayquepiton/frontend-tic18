@@ -20,6 +20,16 @@
 
   <app-valor-propriedade *ngIf="tituloSelecionado" [veiculoSelecionado]="veiculoSelecionado" [tituloSelecionado]="tituloSelecionado"></app-valor-propriedade>
 
-  <app-adicionar-objeto *ngIf="tituloSelecionado" [veiculoSelecionado]="veiculoSelecionado" [tituloSelecionado]="tituloSelecionado"></app-adicionar-objeto>
-  
+  <app-adicionar-objeto
+    *ngIf="tituloSelecionado"
+    [veiculoSelecionado]="veiculoSelecionado"
+    [tituloSelecionado]="tituloSelecionado"
+    (adicionarAoCarrinhoClicado)="onAdicionarAoCarrinhoClicado($event)"
+  ></app-adicionar-objeto>
+
+</div>
+
+<!-- Rodapé (app-carrinho) -->
+<div class="rodape-botoes" *ngIf="exibirBotoesRodape">
+  <app-carrinho [nomesVeiculos]="nomesVeiculos"></app-carrinho>
 </div>
