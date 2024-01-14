@@ -18,5 +18,11 @@
   .rodape-botoes button {
     flex: 1; /* Cada botão ocupa um terço da largura disponível */
     margin: 0 5px; /* Espaçamento opcional entre os botões */
+    background-color: gray;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    width: 150px; /* Adicionando largura fixa */
   }
   

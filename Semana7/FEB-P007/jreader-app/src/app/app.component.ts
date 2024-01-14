@@ -38,13 +38,12 @@ export class AppComponent {
 
   onAdicionarAoCarrinhoClicado(nomeVeiculo: string) {
     // Lógica para quando o botão "Adicionar ao carrinho" for clicado
-    console.log(`Botão "Adicionar ao carrinho" clicado. Nome do veículo: ${nomeVeiculo}`);
-  
+    // Não há console.log aqui
+
     // Adiciona o nome do veículo à lista de nomesVeiculos
     this.nomesVeiculos.push(nomeVeiculo);
-  
+
     // Define a visibilidade dos botões no rodapé como true
     this.exibirBotoesRodape = true;
   }
-
 }
