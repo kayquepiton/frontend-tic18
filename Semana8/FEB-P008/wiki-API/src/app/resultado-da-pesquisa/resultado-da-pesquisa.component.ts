@@ -18,6 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.3s ease-in-out;
+      background-color: #f9f9f9;
     }
 
     .result-item:hover {
@@ -27,11 +28,13 @@ import { DomSanitizer } from '@angular/platform-browser';
     .result-item h2 {
       color: #333;
       font-size: 1.5em;
+      margin-bottom: 10px;
     }
 
     .result-item p {
       color: #666;
       line-height: 1.6;
+      margin-bottom: 10px;
     }
 
     .result-item a {
