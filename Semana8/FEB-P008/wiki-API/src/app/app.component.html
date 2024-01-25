@@ -1,4 +1,5 @@
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <h1>Consultando a Wiki API</h1>
   <app-barra-de-busca (search)="onSearch($event)"></app-barra-de-busca>
   <app-resultado-de-pesquisa [results]="results" [term]="term"></app-resultado-de-pesquisa>
 </div>
