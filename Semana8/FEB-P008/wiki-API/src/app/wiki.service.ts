@@ -1,15 +1,16 @@
-// wikipedia.service.ts
+//wiki.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class WikipediaService {
+export class WikiService {
   constructor(private http: HttpClient) {}
 
   search(term: string): Observable<any> {
-    // Implementação do serviço
+    return this.http.get(`https://pt.wikipedia.org/w/api.php?action=query&list=search&srsearch=${term}&utf8=&format=json`);
   }
 }

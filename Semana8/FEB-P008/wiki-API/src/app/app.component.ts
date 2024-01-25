@@ -1,49 +1,20 @@
-// app.component.ts
+//app.component.ts
+
 import { Component } from '@angular/core';
+import { WikiService } from './wiki.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  categoriaSelecionada: string | null = null;
-  veiculos: { Name: string }[] = [];
-  veiculoSelecionado: string | null = null;
-  nomesVeiculos: string[] = [];
-  tituloSelecionado: string | null = null;
-  mostrarAdicionarObjeto: boolean = false;
-  exibirBotoesRodape: boolean = false;
+  results = [];
+  term = '';
 
-  onCategoriaSelecionada(categoria: string) {
-    this.categoriaSelecionada = categoria;
-  }
+  constructor(private wikiService: WikiService) {}
 
-  onVeiculosSelecionados(veiculos: { Name: string }[]) {
-    this.veiculos = veiculos;
-  }
-
-  onVeiculoSelecionado(veiculo: string) {
-    this.veiculoSelecionado = veiculo;
-  }
-
-  onNomesVeiculosSelecionados(nomesVeiculos: string[]) {
-    // Implemente a lógica necessária aqui
-  }
-
-  onTituloSelecionado(titulo: string) {
-    this.tituloSelecionado = titulo;
-    this.mostrarAdicionarObjeto = true;
-  }
-
-  onAdicionarAoCarrinhoClicado(nomeVeiculo: string) {
-    // Lógica para quando o botão "Adicionar ao carrinho" for clicado
-    // Não há console.log aqui
-
-    // Adiciona o nome do veículo à lista de nomesVeiculos
-    this.nomesVeiculos.push(nomeVeiculo);
-
-    // Define a visibilidade dos botões no rodapé como true
-    this.exibirBotoesRodape = true;
+  onSearch(term: string) {
+    this.term = term;
+    this.wikiService.search(term).subscribe(results => this.results = results);
   }
 }

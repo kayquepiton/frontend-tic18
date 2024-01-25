@@ -1,35 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-
-import { CarrinhoComponent } from './carrinho/carrinho.component';
-import { ClassesComponent } from './classes/classes.component';
-import { ObjetosComponent } from './objetos/objetos.component';
-import { PropriedadesComponent } from './propriedades/propriedades.component';
-import { ValorPropriedadeComponent } from './valor-propriedade/valor-propriedade.component';
-import { AdicionarObjetoComponent } from './adicionar-objeto/adicionar-objeto.component';
-import { AlinharBotoesDirective } from './alinhar-botoes.directive';
+import { ResultadoDePesquisaComponent } from './resultado-da-pesquisa/resultado-da-pesquisa.component';
 import { BarraDeBuscaComponent } from './barra-de-busca/barra-de-busca.component';
-import { ResultadoDaPesquisaComponent } from './resultado-da-pesquisa/resultado-da-pesquisa.component'; // Importe o ApiService
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarrinhoComponent,
-    ClassesComponent,
-    ObjetosComponent,
-    PropriedadesComponent,
-    ValorPropriedadeComponent,
-    AdicionarObjetoComponent,
-    AlinharBotoesDirective,
-    BarraDeBuscaComponent,
-    ResultadoDaPesquisaComponent
+    ResultadoDePesquisaComponent,
+    BarraDeBuscaComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule // Adicione o HttpClientModule aos imports
+    HttpClientModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,12 @@
+{
+    "/wikipedia": {
+      "target": "https://pt.wikipedia.org",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": {
+        "^/wikipedia": ""
+      }
+    }
+  }
+  
