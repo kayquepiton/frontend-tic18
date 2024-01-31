@@ -1,0 +1,10 @@
+<!-- carrinho.component.html -->
+<div class="carrinho-container">
+    <!-- Conteúdo do carrinho aqui... -->
+    
+    <!-- Rodapé com botões -->
+    <div class="rodape-botoes" *ngIf="exibirBotoesRodape">
+      <button *ngFor="let nomeVeiculo of nomesVeiculos" (click)="acaoBotao1()">{{ nomeVeiculo }}</button>
+    </div>
+  </div>
+  
