@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-uesc-content',
   templateUrl: './uesc-content.component.html',
-  styleUrl: './uesc-content.component.css'
+  styleUrls: ['./uesc-content.component.css'],
 })
 export class UescContentComponent {
-
+  @Input() items: any[] = [];
 }

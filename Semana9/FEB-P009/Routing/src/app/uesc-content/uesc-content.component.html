@@ -1,1 +1,6 @@
-<p>uesc-content works!</p>
+<div *ngFor="let item of items" class="uesc-content">
+    <h6>{{ item.title || '' }}</h6>
+    <p>{{ item.description || '' }}</p>
+    <a [href]="item.url || '#'">Leia mais</a>
+</div>
+  

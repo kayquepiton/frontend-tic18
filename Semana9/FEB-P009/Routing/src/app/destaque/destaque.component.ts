@@ -16,7 +16,7 @@ export class DestaqueComponent implements OnInit {
   }
 
   carregarDadosLocais() {
-    const caminhoLocal = 'assets/json/imagens.json';
+    const caminhoLocal = '/assets/json/imagens.json';
     
     this.http.get<any[]>(caminhoLocal).subscribe(
       (data: any[]) => {
