@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Aula6Component } from './aula6.component';
 
-describe('AppComponent', () => {
+describe('Aula6Component', () => {
   let fixture: any;
   let app: any;
 

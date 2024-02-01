@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './aula6.component.html',
   styleUrls: ['./aula6.component.css']
 })
-export class AppComponent implements OnInit {
+export class Aula6Component implements OnInit {
   constructor(private titleService: Title) {}
 
   ngOnInit() {
