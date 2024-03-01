@@ -1,8 +1,0 @@
-<!-- propriedades.component.html -->
-
-<div class="categorias" appAlinharBotoes style="margin-top: 30px;">
-  <button class="botao-laranja" *ngIf="veiculoSelecionado">{{ veiculoSelecionado.Name }}</button>
-  <button class="botao-azul" *ngFor="let nomeVeiculo of getNomesVeiculos()" (click)="emitirTituloSelecionado(nomeVeiculo)">{{ nomeVeiculo }}</button>
-</div>
-  
-  
