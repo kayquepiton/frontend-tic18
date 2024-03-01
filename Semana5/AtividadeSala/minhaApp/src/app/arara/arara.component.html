@@ -1,0 +1,10 @@
+<div>
+    <label for="permissao">Nome:</label>
+    <input type="text" id="permissao" [(ngModel)]="permissao" (input)="onLogando($event)" (keyup.enter)="onLogin()">
+    
+    <button (click)="onLogin()" [disabled]="!isPermissaoValida">Login</button>
+    
+    <p>{{ mensagem }}</p>
+    
+  </div>
+  

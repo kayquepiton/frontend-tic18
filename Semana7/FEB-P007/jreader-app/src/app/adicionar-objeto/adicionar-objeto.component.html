@@ -1,0 +1,7 @@
+<!-- adicionar-objeto.component.html -->
+
+<div class="categorias" appAlinharBotoes style="margin-top: 30px;">
+    <button class="botao-roxo" style="height: 275px;" *ngIf="veiculoSelecionado">{{ veiculoSelecionado.Name }}</button>
+    <button class="botao-azul" (click)="onAdicionarAoCarrinho()">Adicionar ao carrinho</button>
+</div>
+  

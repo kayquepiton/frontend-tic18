@@ -1,0 +1,113 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo do corpo */
+}
+
+.container-destinos {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.roteiros-viagens {
+    width: 150px;
+    margin: 20px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.postal {
+    max-width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.roteiro-destino {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: purple !important;
+}
+
+.roteiro-incluso {
+    margin: 15px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.roteiro-incluso li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+    color: purple !important;
+}
+
+.roteiro-incluso li::before {
+    content: "\2713"; /* Unicode character for a checkmark */
+    color: purple; /* Cor verde para o checkmark */
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.roteiro-preco {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 25px 0;
+    color: purple !important;
+}
+
+.roteiro-obs,
+.roteiro-parcelamento {
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    color: purple !important;
+}
+
+.roteiro-comprar {
+    background-color: #2afa2a; /* Cor laranja */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition-duration: 0.3s; /* Adicionando transição de 0.3 segundos */
+    color: #fff !important;
+}
+
+.roteiro-comprar:hover {
+    background-color: #02b820; /* Cor laranja mais escura */
+    color: #fff; /* Mudando a cor do texto ao passar o mouse */
+    cursor: pointer;
+}
+
+.roteiro-comprar:active {
+    transform: scale(0.9); /* Reduzindo o tamanho do botão ao ser clicado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adicionando sombra ao ser clicado */
+}
+
+@keyframes compra {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.animacao-compra {
+    animation: compra 1s;
+}

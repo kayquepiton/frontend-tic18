@@ -1,0 +1,95 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">Nome do usuário:</label>
+    <input id="username" formControlName="username" placeholder="Nome do usuário">
+    <div *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched" class="error-message">
+      <div *ngIf="userForm.get('username')?.errors?.['required']">* Nome do usuário é obrigatório.</div>
+      <div *ngIf="userForm.get('username')?.errors?.['maxlength']">* Nome do usuário deve ter no máximo 12 caracteres.</div>
+      <div *ngIf="userForm.get('username')?.errors?.['pattern']">* Nome do usuário não deve conter espaços.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Senha:</label>
+    <input id="password" formControlName="password" placeholder="Senha" type="password">
+    <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="error-message">
+      <div *ngIf="userForm.get('password')?.errors?.['required']">* Senha é obrigatória.</div>
+      <div *ngIf="userForm.get('password')?.errors?.['minlength']">* Senha deve ter no mínimo 8 caracteres.</div>
+      <div *ngIf="userForm.get('password')?.errors?.['uppercaseLetter']">* Senha deve conter pelo menos uma letra maiúscula.</div>
+      <div *ngIf="userForm.get('password')?.errors?.['lowercaseLetter']">* Senha deve conter pelo menos uma letra minúscula.</div>
+      <div *ngIf="userForm.get('password')?.errors?.['symbol']">* Senha deve conter pelo menos um símbolo</div>
+    </div>
+  </div>
+  
+  
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" placeholder="Email">
+    <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="error-message">
+      <div *ngIf="userForm.get('email')?.errors?.['required']">* Email é obrigatório.</div>
+      <div *ngIf="userForm.get('email')?.errors?.['email']">* Email deve ter um formato válido.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fullName">Nome completo:</label>
+    <input id="fullName" formControlName="fullName" placeholder="Nome completo">
+    <div *ngIf="userForm.get('fullName')?.invalid && userForm.get('fullName')?.touched" class="error-message">
+      <div *ngIf="userForm.get('fullName')?.errors?.['required']">* Nome completo é obrigatório.</div>
+      <div *ngIf="userForm.get('fullName')?.errors?.['pattern']">* Insira o nome completo (Nome e Sobrenome).</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Telefone:</label>
+    <input id="phone" formControlName="phone" placeholder="Telefone">
+    <div *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched" class="error-message">
+      <div *ngIf="userForm.get('phone')?.errors?.['required']">* Telefone é obrigatório.</div>
+      <div *ngIf="userForm.get('phone')?.errors?.['pattern']">* Insira um número de telefone válido (99) 99999-9999.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Endereço:</label>
+    <input id="address" formControlName="address" placeholder="Endereço">
+    <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched" class="error-message">
+      <div *ngIf="userForm.get('address')?.errors?.['required']">* Endereço é obrigatório.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="birthDate">Data de Nascimento:</label>
+    <input id="birthDate" formControlName="birthDate" placeholder="Data de Nascimento" type="date">
+    <div *ngIf="userForm.get('birthDate')?.invalid && (userForm.get('birthDate')?.touched || userForm.get('birthDate')?.dirty)" class="error-message">
+      <div *ngIf="userForm.get('birthDate')?.errors?.['required']">* Data de Nascimento é obrigatória.</div>
+      <div *ngIf="userForm.get('birthDate')?.errors?.['underage'] && userForm.get('birthDate')?.value">* É necessário ser maior de 18 anos.</div>
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="gender">Gênero:</label>
+    <select id="gender" formControlName="gender">
+      <option value="" disabled selected hidden>Gênero</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+      <option value="Outro">Outro</option>
+    </select>
+    <div *ngIf="userForm.get('gender')?.invalid && userForm.get('gender')?.touched" class="error-message">
+      <div *ngIf="userForm.get('gender')?.errors?.['required']">* Gênero é obrigatório.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="profession">Profissão:</label>
+    <select id="profession" formControlName="profession">
+      <option value="" disabled selected hidden>Profissão</option>
+      <option *ngFor="let profession of professions" [value]="profession">{{ profession }}</option>
+    </select>
+    <div *ngIf="userForm.get('profession')?.invalid && userForm.get('profession')?.touched" class="error-message">
+      <div *ngIf="userForm.get('profession')?.errors?.['required']">* Profissão é obrigatória.</div>
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UESC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .uesc-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            grid-gap: 5px;
+            margin: 5px 10px;
+        }
+
+        .uesc-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            height: 230px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+
+        .uesc-bar {
+            background-color: #70ccd8;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px;
+            font-size: 16px;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .uesc-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .uesc-content img {
+            width: 100%;
+            height: 80px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .uesc-content h6 {
+            margin-bottom: 5px;
+            color: #333333;
+            font-size: 70%;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .uesc-content a {
+            color: #007bff;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 70%;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .uesc-button-more {
+            background-color: #acaeb1;
+            color: #ffffff;
+            border: none;
+            padding: 5px 30%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 5px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .uesc-A6 {
+            width: 201%;
+        }
+
+        .uesc-A1, .uesc-A7 {
+            background-color: #70ccd8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #ffffff;
+            height: 80px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        @media screen and (max-width: 500px) {
+            .uesc-container {
+                grid-template-columns: 1fr;
+            }
+
+            .uesc-box {
+                margin-bottom: 5px;
+            }
+
+            .uesc-A6 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="uesc-A1">UESC</div>
+
+    <div class="uesc-container">
+        <div class="uesc-box uesc-A2">
+            <div class="uesc-bar">Menu</div>
+            <div class="uesc-content">
+                <h6>Centros e grupos de pesquisa</h6>
+                <h6>Internacional</h6>
+                <h6>Laboratórios</h6>
+                <h6>Mapa da cidade</h6>
+                <h6>Núcleos</h6>
+                <h6>Projetos</h6>
+            </div>
+        </div>
+
+        <div class="uesc-box uesc-A3">
+            <div class="uesc-bar">Notícias</div>
+            <div class="uesc-content">
+                <h6>Reeleito, reitor da UESC agradece</h6>
+                <a href="link_para_reeleicao.html">Confiança na comunidade acadêmica</a>
+
+                <h6>Professor da UESC ministra curso no Rio Grande do Sul</h6>
+                <a href="link_para_curso_rs.html">Detalhes sobre o curso no Rio Grande do Sul</a>
+
+                <h6>Autor das ameaças à UESC é aprendido</h6>
+                <a href="link_para_ameacas_uesc.html">Desfecho da investigação</a>
+
+                <button class="uesc-button-more" onclick="window.location.href='link_para_mais_noticias.html'">Mais Notícias</button>
+            </div>
+        </div>
+
+        <div class="uesc-box uesc-A4">
+            <div class="uesc-bar">Destaque</div>
+            <div class="uesc-content">
+                <img src="uesc1.jpg" alt="Imagem 1">
+                <img src="uesc2.jpg" alt="Imagem 2">
+            </div>
+        </div>
+
+        <div class="uesc-box uesc-A5">
+            <div class="uesc-bar">Serviços</div>
+            <div class="uesc-content">
+                <h6>Auditórios</h6>
+                <h6>Bibliotecas</h6>
+                <h6>Licitações</h6>
+                <h6>Pavilhão Max Menezes</h6>
+                <h6>Portal Acadêmico</h6>
+                <h6>Procotolo Digital</h6>
+                <h6>Peticionamento Eletrônico SEI</h6>
+            </div>
+        </div>
+
+        <div class="uesc-box uesc-A6">
+            <div class="uesc-bar">Resultados</div>
+            <div class="uesc-content">
+                <h6>Seleção pública professor substituto</h6>
+                <a href="link_para_reeleicao.html">Confiança na comunidade acadêmica</a>
+
+                <h6>Processo seletivo professor visitante - PPGMC</h6>
+                <a href="link_para_eleicao_2024_2028.html">Expectativas para o próximo mandato</a>
+
+                <h6>Pós-graduação produção vegetal</h6>
+                <a href="link_para_curso_rs.html">Detalhes sobre o curso no Rio Grande do Sul</a>
+
+                <h6>Pós-graduação produção em ciência de saúde</h6>
+                <a href="link_para_ameacas_uesc.html">Desfecho da investigação</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="uesc-A7">FOOTER</div>
+</body>
+</html>

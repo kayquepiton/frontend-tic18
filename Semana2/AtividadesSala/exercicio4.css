@@ -1,0 +1,44 @@
+/* Reset de margin e padding para garantir consistência */
+body, h1, p, div {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo da caixa externa */
+.caixa-externa {
+    width: 400px;
+    height: 200px;
+    background-color: #bf34db; /* Azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da caixa interna */
+.caixa-interna {
+    width: 370px;
+    height: 170px;
+    background-color: #0136a8; /* Vermelho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Adicionado para colocar as caixas internas 2 e 3 em coluna */
+}
+
+/* Estilo da caixa interna 2 (azul) e caixa interna 3 (verde) */
+.caixa-interna2,
+.caixa-interna3 {
+    width: 320px;
+    height: 20px;
+    margin: 5px; /* Adicionei uma margem menor para separar as caixas internas 2 e 3 */
+}
+
+.caixa-interna2 {
+    color: rgb(255, 255, 0);
+    background-color: #0136a8; /* Vermelho */
+}
+
+.caixa-interna3 {
+    color: rgb(255, 255, 255);
+    background-color: #a82201; /* Azul */
+}

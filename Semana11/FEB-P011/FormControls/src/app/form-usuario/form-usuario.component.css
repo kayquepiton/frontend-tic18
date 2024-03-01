@@ -1,0 +1,59 @@
+form {
+  /* Remova a regra display: flex; e flex-direction: column; */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Alinhar os rótulos acima dos campos */
+form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  width: 100%; /* Faz o rótulo ocupar toda a largura do contêiner do formulário */
+}
+
+input, select, button {
+  width: 300px; /* Definindo a largura fixa para os campos */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type=password] {
+  letter-spacing: 3px;
+}
+
+input[type=date], select {
+  cursor: pointer;
+}
+
+button {
+  background-color: #3CBC8D;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo para campos inválidos */
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+  border-color: #ff7f7f;
+}
+
+/* Estilo para mensagens de erro */
+.error-message {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
