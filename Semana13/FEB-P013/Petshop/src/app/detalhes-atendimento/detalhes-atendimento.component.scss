@@ -1,0 +1,37 @@
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    width: 100vw;
+    height: 133vh;
+}
+
+.details-container {
+    display: flex;
+    gap: 25px; /* Espaçamento entre os elementos */
+    align-items: center;
+
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0px 0px 4px 0px #949494d5;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os parágrafos */
+}
+
+.details-container h1 {
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+
+.details-container p {
+    font-size: 21px;
+    font-weight: bold;
+}

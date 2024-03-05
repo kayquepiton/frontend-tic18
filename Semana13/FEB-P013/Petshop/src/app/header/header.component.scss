@@ -1,0 +1,39 @@
+/* CSS */
+.header {
+    background-color: #2ecc71; /* Cor laranja */
+    width: 100%; /* Largura total */
+    position: fixed; /* Fixo no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    height: 80px;
+    border-bottom: 1px solid #ffffff; /* Borda branca */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif; /* Aplicando a fonte Manrope */
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.header .nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Texto branco */
+    font-weight: 700; /* Peso da fonte para destaque */
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.header .nav-links a:hover {
+    color: #160c04; /* Cor de hover amarelo ouro */
+}
+
+/* Adicionando padding-top ao conteúdo principal para evitar sobreposição com o cabeçalho fixo */
+.main-content {
+    padding-top: 60px; /* Ajuste conforme a altura do seu cabeçalho */
+}
