@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { IPet } from '../app/models/pet.model';
+import { IContato } from '../app/models/contato.model'; // Importe o modelo de contato
 import { Observable, catchError, map, of } from 'rxjs';
 
 @Injectable({
@@ -18,11 +19,11 @@ export class DataBaseService implements OnInit {
   }
 
   addPet(petData: IPet): Observable<any> {
-    return this.http.post('https://petshop-707d6-default-rtdb.firebaseio.com/posts.json', petData);
+    return this.http.post('https://residencia-fc45d-default-rtdb.firebaseio.com/posts.json', petData);
   }
 
   getPets() {
-    return this.http.get<{ [key: string]: IPet }>('https://petshop-707d6-default-rtdb.firebaseio.com/posts.json',
+    return this.http.get<{ [key: string]: IPet }>('https://residencia-fc45d-default-rtdb.firebaseio.com/posts.json',
       {
         params: new HttpParams().set('print', 'pretty')
       }
@@ -42,16 +43,20 @@ export class DataBaseService implements OnInit {
   }
 
   deletePet(id: string) {
-    return this.http.delete(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
+    return this.http.delete(`https://residencia-fc45d-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
   getPet(id: string) {
-    return this.http.get<IPet>(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
+    return this.http.get<IPet>(`https://residencia-fc45d-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
   updatePet(id: string, petData: IPet
   ) {
-    return this.http.put(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`, petData, { observe: 'response' });
+    return this.http.put(`https://residencia-fc45d-default-rtdb.firebaseio.com/posts/${id}.json`, petData, { observe: 'response' });
+  }
+
+  enviarContato(contatoData: IContato): Observable<any> {
+    return this.http.post('https://residencia-fc45d-default-rtdb.firebaseio.com/contatos.json', contatoData);
   }
 
 }

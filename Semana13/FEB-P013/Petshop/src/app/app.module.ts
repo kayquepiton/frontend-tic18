@@ -14,6 +14,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AtendimentoComponent } from './atendimento/atendimento.component';
 import { DetalhesAtendimentoComponent } from './detalhes-atendimento/detalhes-atendimento.component';
 import { EditarAtendimentoComponent } from './editar-atendimento/editar-atendimento.component';
+import { ContatoComponent } from './contato/contato.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'editar/:id', component: EditarAtendimentoComponent },
   { path: 'atendimentos', component: AtendimentoComponent },
   { path: 'detalhes/:id', component: DetalhesAtendimentoComponent },
+  { path: 'contato', component: ContatoComponent },
 ];
 
 const icons = {
@@ -40,7 +43,9 @@ const icons = {
     CadastroComponent,
     AtendimentoComponent,
     DetalhesAtendimentoComponent,
-    EditarAtendimentoComponent
+    EditarAtendimentoComponent,
+    ContatoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

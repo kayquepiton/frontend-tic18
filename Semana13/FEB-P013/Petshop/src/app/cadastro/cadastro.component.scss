@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        box-shadow: 0px 0px 4px 0px #559c87d5;
+        box-shadow: 0px 0px 4px 0px #aaa;
         border-radius: 5px; /* Aumentando a curvatura das bordas */
         padding: 55px;
         background-color: #fff;
@@ -46,14 +46,14 @@
                 font-size: 16px;
                 border-radius: 5px;
                 border: none;
-                background-color: #2ecc71;
+                background-color: #843bf8;
                 color: #fff;
                 cursor: pointer;
                 margin-top: 20px;
                 width: fit-content; /* Ajustando a largura do botão de acordo com o conteúdo */
 
                 &:hover {
-                    background-color: #27ae60;
+                    background-color: #664896;
                 }
             }
         }
