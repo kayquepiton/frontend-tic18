@@ -1,0 +1,43 @@
+img {
+    margin-top: 50px;
+    margin-left: 610px;
+    width: 650px;
+    height: 600px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* CSS */
+.content-container {
+    align-items: center;
+    gap: 20px;
+    margin: 60px;
+    color: white;
+    margin-right: 200px;
+    margin-top: 300px;
+}
+
+.dog-image {
+    width: 50%; /* Ajuste a largura conforme necessário */
+}
+
+.text-content {
+    width: 50%; /* Ajuste a largura conforme necessário */
+}
+
+/* Estilos adicionais para os botões, se necessário */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
