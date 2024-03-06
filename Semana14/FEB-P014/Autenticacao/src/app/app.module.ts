@@ -16,6 +16,8 @@ import { DetalhesAtendimentoComponent } from './detalhes-atendimento/detalhes-at
 import { EditarAtendimentoComponent } from './editar-atendimento/editar-atendimento.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthFormComponent } from './auth-form/auth-form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'editar/:id', component: EditarAtendimentoComponent },
   { path: 'atendimentos', component: AtendimentoComponent },
   { path: 'detalhes/:id', component: DetalhesAtendimentoComponent },
+  { path: 'auth-form', component: AuthFormComponent },
   { path: 'contato', component: ContatoComponent },
 ];
 
@@ -45,7 +48,8 @@ const icons = {
     DetalhesAtendimentoComponent,
     EditarAtendimentoComponent,
     ContatoComponent,
-    FooterComponent
+    FooterComponent,
+    AuthFormComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ const icons = {
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FeatherModule.pick(icons)
+    FeatherModule.pick(icons),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
