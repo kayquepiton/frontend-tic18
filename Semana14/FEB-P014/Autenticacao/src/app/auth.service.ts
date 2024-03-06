@@ -69,4 +69,14 @@ export class AuthService {
     this.usuario.next(new Usuario('', '', '', new Date()));
     localStorage.removeItem('userData');
   }
+
+  isLoggedIn(): boolean {
+    const storedUser = this.getStoredUser();
+    return !!storedUser && !!storedUser.token && new Date(storedUser.tokenExpirationDate) > new Date();
+  }
+
+  private getStoredUser(): Usuario | null {
+    const userData = localStorage.getItem('userData');
+    return userData ? JSON.parse(userData) : null;
+  }
 }

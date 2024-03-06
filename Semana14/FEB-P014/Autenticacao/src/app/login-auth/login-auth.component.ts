@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-auth-form',
-  templateUrl: './auth-form.component.html',
-  styleUrl: './auth-form.component.scss'
+  selector: 'app-login-auth',
+  templateUrl: './login-auth.component.html',
+  styleUrl: './login-auth.component.scss'
 })
-export class AuthFormComponent implements OnInit {
+export class LoginAuthComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -26,7 +26,7 @@ export class AuthFormComponent implements OnInit {
     this.authService.loginUser(this.form.value.user, this.form.value.password).subscribe({
       next: (res) => {
         console.log(res);
-        alert("Logou")
+        alert("Logando...")
         this.router.navigate(['/']);
       },
       error: () => {

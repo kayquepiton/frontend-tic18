@@ -16,17 +16,19 @@ import { DetalhesAtendimentoComponent } from './detalhes-atendimento/detalhes-at
 import { EditarAtendimentoComponent } from './editar-atendimento/editar-atendimento.component';
 import { ContatoComponent } from './contato/contato.component';
 import { FooterComponent } from './footer/footer.component';
-import { AuthFormComponent } from './auth-form/auth-form.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginAuthComponent } from './login-auth/login-auth.component';
+import { AuthGuard } from './auth.guard';
+import { DateFormatPipe } from './date-format.pipe';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cadastro', component: CadastroComponent },
-  { path: 'editar/:id', component: EditarAtendimentoComponent },
-  { path: 'atendimentos', component: AtendimentoComponent },
-  { path: 'detalhes/:id', component: DetalhesAtendimentoComponent },
-  { path: 'auth-form', component: AuthFormComponent },
-  { path: 'contato', component: ContatoComponent },
+  { path: 'cadastro', canActivate: [AuthGuard], component: CadastroComponent },
+  { path: 'editar/:id', canActivate: [AuthGuard], component: EditarAtendimentoComponent },
+  { path: 'atendimentos', canActivate: [AuthGuard], component: AtendimentoComponent },
+  { path: 'detalhes/:id', canActivate: [AuthGuard], component: DetalhesAtendimentoComponent },
+  { path: 'contato', canActivate: [AuthGuard], component: ContatoComponent },
+  { path: 'login', component: LoginAuthComponent },
+  
 ];
 
 const icons = {
@@ -49,7 +51,8 @@ const icons = {
     EditarAtendimentoComponent,
     ContatoComponent,
     FooterComponent,
-    AuthFormComponent
+    LoginAuthComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
@@ -58,8 +61,7 @@ const icons = {
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FeatherModule.pick(icons),
-    NgbModule
+    FeatherModule.pick(icons)
   ],
   providers: [],
   bootstrap: [AppComponent],
