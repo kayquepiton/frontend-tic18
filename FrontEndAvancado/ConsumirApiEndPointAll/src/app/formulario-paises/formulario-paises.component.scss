@@ -1,0 +1,87 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  margin-top: 40%;
+  height: 250vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px; 
+  border: 1px solid #aaa; 
+  padding: 20px; 
+  background-color: #fff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens do formulário sejam quebrados em várias linhas */
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 50%; /* Define cada item para ocupar metade da largura */
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      padding: 10px; /* Mantenha o padding original */
+      font-size: 16px;
+      outline: none;
+      width: 100%; /* Ocupa todo o espaço disponível na largura */
+      max-width: 200px; /* Define uma largura máxima para evitar que o campo se estenda demais */
+    }
+
+    span {
+      font-size: 14px; 
+      color: #e25a57; 
+      margin-top: 5px; 
+    }
+  }
+
+  button {
+    padding: 12px 45%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #843bf8;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    width: fit-content;
+
+    &:hover {
+      background-color: #664896;
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.popup .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}

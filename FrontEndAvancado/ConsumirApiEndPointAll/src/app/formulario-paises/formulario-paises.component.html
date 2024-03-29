@@ -1,0 +1,21 @@
+<div class="register">
+  <div class="form-container">
+    <h2>Formulário de Países</h2>
+    <br>
+    <form [formGroup]="paisesForm" (ngSubmit)="onSubmit()">
+      <div *ngFor="let control of paisesForm.controls | keyvalue">
+        <label>{{ control.key }}</label>
+        <input type="text" [formControlName]="control.key" />
+        <span *ngIf="!paisesForm.get(control.key)?.valid && paisesForm.get(control.key)?.touched">
+          Por favor, preencha este campo!
+        </span>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="popup" *ngIf="cadastroRealizado">
+      <span class="close" (click)="fecharPopup()">X</span>
+      <p>Cadastro realizado com sucesso!</p>
+      <p>Os dados foram impressos no console.</p>
+    </div>
+  </div>
+</div>
