@@ -1,0 +1,53 @@
+<div class="cart">
+  <ng-container *ngIf="!compraFinalizada"> <!-- Usando ng-container para agrupar o conteúdo condicionalmente -->
+    <h2>Carrinho de compras</h2>
+
+    <!-- Iterar sobre os itens do carrinho -->
+    <div *ngFor="let item of listaDeItens(); let i = index" class="cart-item">
+      <img src="{{item.image}}" alt="{{item.name}}" class="item-image">
+      <div class="item-details">
+        <p><strong>{{ item.name }}</strong></p>
+        <p><strong>Preço:</strong> R$ {{ item.price.toFixed(2) }}</p>
+        <p><strong>Quantidade:</strong> {{ item.quantity }}</p>
+        <button (click)="incrementQuantity(i)">+</button>
+        <button (click)="decrementQuantity(i)">-</button>
+        <button (click)="removeItem(i)">Remover</button>
+      </div>
+    </div>
+
+    <!-- Exibir o total do carrinho -->
+    <div class="cart-total">
+      <h3><span>Total:</span> R$ {{ precoTotal().toFixed(2) }}</h3>
+    </div>
+
+    <!-- Botão "Finalizar compra" -->
+    <div class="cart-item2">
+      <button (click)="carregarDadosDoCarrinho()">Finalizar compra</button>
+    </div>
+  </ng-container>
+
+  <!-- Pop-up -->
+  <div *ngIf="showPopup" class="popup">
+    <div class="popup-content">
+      <h2>Dados do Carrinho</h2>
+      <ul>
+        <li *ngFor="let item of itensDoCarrinho" class="cart-item-popup">
+          <div class="popup-item-details">
+            <p><strong>{{ item.name }}</strong></p>
+            <p>Quantidade: {{ item.quantity }}</p>
+          </div>
+          <div class="popup-item-price">
+            <p>R$ {{ (item.price * item.quantity).toFixed(2) }}</p>
+          </div>
+        </li>
+      </ul>
+      <p>Total: R$ {{ precoTotal().toFixed(2) }}</p>
+      <button (click)="fecharPopup()" class="popup-close-button">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Mensagem de compra finalizada -->
+  <div *ngIf="compraFinalizada" class="compra-finalizada">
+    <p>Compra finalizada com sucesso! Obrigado por comprar conosco.</p>
+  </div>
+</div>

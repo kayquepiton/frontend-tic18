@@ -1,0 +1,19 @@
+<div class="cart">
+    <h2>Carrinho de compras</h2>
+  
+    <div *ngFor="let item of listaDeItens(); let i = index" class="cart-item">
+        <img src="{{item.image}}" alt="{{item.name}}" class="item-image">
+        <div class="item-details">
+            <p><strong>{{ item.name }}</strong></p>
+            <p><strong>Preço:</strong> R$ {{ item.price.toFixed(2) }}</p>
+            <p><strong>Quantidade:</strong> {{ item.quantity }}</p>
+            <button (click)="removeItem(i)">Remover</button>
+        </div>
+        
+    </div>
+  
+    <div class="cart-total">
+        <h3><span>Total:</span> R$ {{ precoTotal().toFixed(2) }}</h3>
+    </div>
+  </div>
+  
