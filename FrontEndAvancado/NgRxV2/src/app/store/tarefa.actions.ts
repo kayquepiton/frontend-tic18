@@ -13,5 +13,5 @@ export const removerTarefa = createAction(
 
 export const editarTarefa = createAction(
   '[Tarefa] Editar Tarefa',
-  props<{ tarefa: Tarefa }>()
+  props<{ id: string; novaDescricao: string }>() // Definir as propriedades esperadas pelo reducer
 );

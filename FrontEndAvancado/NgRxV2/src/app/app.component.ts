@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TarefaState } from './store/tarefa.reducer';
 import { Observable } from 'rxjs';
-import { selectorSelecionaTarefa } from './store/tarefa.seletors';
+import { selectorSelecionaTarefas } from './store/tarefa.seletors';
 import { InputTarefaComponent } from './input-tarefa/input-tarefa.component';
 import { ShowTarefasComponent } from './show-tarefas/show-tarefas.component';
 
@@ -20,7 +20,7 @@ export class AppComponent {
   tarefas$: Observable<TarefaState>;
 
   constructor(private store: Store<{tarefas: TarefaState}>){
-    this.tarefas$ = store.select(selectorSelecionaTarefa);
+    this.tarefas$ = store.select(selectorSelecionaTarefas);
   }
 }
 

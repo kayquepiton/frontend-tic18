@@ -1,11 +1,6 @@
-<div *ngIf="tarefa" class="task-input">
-    <p>{{ tarefa.descricao }}</p>
-    <button (click)="iniciarEdicao()" class="task-button">Editar</button>
-    
-    <div *ngIf="editing" class="edit-form">
-      <input type="text" [(ngModel)]="editedDescricao" class="task-field" />
-      <button (click)="finalizarEdicao()" class="task-button">Salvar</button>
-      <button (click)="cancelarEdicao()" class="task-button">Cancelar</button>
-    </div>
-  </div>
-  
+<div *ngIf="tarefa" class="edit-form">
+  <h3>Editando Tarefa</h3>
+  <input type="text" [(ngModel)]="tarefa.descricao" class="task-field" />
+  <button (click)="atualizarTarefa()" class="task-button">Salvar</button>
+  <button (click)="cancelarEdicao()" class="task-button">Cancelar</button>
+</div>

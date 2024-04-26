@@ -1,7 +1,10 @@
-
-<ul class="task-list">
-    <li *ngFor="let tarefa of tarefas" class="task-item">
-      {{ tarefa.descricao }}
-      <button (click)="removeTarefa(tarefa.id)" class="remove-button">Remover</button>
-    </li>
-  </ul>
+<div *ngIf="tarefaSelecionada" class="task-input">
+  <p>{{ tarefaSelecionada.descricao }}</p>
+  <button (click)="iniciarEdicao()" class="task-button">Editar</button>
+  
+  <div *ngIf="tarefaSelecionada && editing" class="edit-form">
+    <input type="text" [(ngModel)]="tarefaSelecionada.descricao" class="task-field" />
+    <button (click)="atualizarTarefa()" class="task-button">Salvar</button>
+    <button (click)="cancelarEdicao()" class="task-button">Cancelar</button>
+  </div>
+</div>

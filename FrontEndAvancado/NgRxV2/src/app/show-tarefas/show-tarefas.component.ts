@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TarefaState } from '../store/tarefa.reducer';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectorSelecionaTarefa } from '../store/tarefa.seletors';
+import { Router } from '@angular/router';
+import { TarefaState } from '../store/tarefa.reducer';
+import { selectorSelecionaTarefas } from '../store/tarefa.seletors';
 import { Tarefa } from '../tarefa.model';
-import { removerTarefa } from '../store/tarefa.actions';
+import { removerTarefa, editarTarefa } from '../store/tarefa.actions';
+
 
 @Component({
   selector: 'app-show-tarefas',
@@ -15,19 +17,39 @@ import { removerTarefa } from '../store/tarefa.actions';
   styleUrls: ['./show-tarefas.component.css']
 })
 export class ShowTarefasComponent {
-  tarefas: Tarefa[] = [{id: '1', descricao: 'Descrição 1'},];
-  tasks$!: Observable<TarefaState>;
+  tarefas: Tarefa[] = [];
+  tasks$: Observable<TarefaState>;
 
-  constructor(private store:Store<{tarefas: TarefaState}>) { }
+  tarefaSelecionada: Tarefa | null = null;
+  editing = false;
 
-  ngOnInit() {
-    this.tasks$ = this.store.select(selectorSelecionaTarefa);
-    this.tasks$.subscribe((t) => {  
-      this.tarefas = t.tarefas;
+  constructor(private store: Store<{ tarefas: TarefaState }>, private router: Router) {
+    this.tasks$ = this.store.pipe(select('tarefas'));
+    this.tasks$.subscribe((tarefaState) => {
+      this.tarefas = tarefaState.tarefas;
     });
   }
 
   removeTarefa(id: string) {
-    this.store.dispatch(removerTarefa({id: id}));
+    this.store.dispatch(removerTarefa({ id }));
+  }
+
+  iniciarEdicao() {
+    this.editing = true;
+  }
+
+  cancelarEdicao() {
+    this.editing = false;
+  }
+
+  atualizarTarefa() {
+    if (this.tarefaSelecionada) {
+      this.store.dispatch(editarTarefa({ id: this.tarefaSelecionada.id, novaDescricao: this.tarefaSelecionada.descricao }));
+      this.cancelarEdicao();
+    }
+  }
+
+  selecionarTarefa(tarefa: Tarefa) {
+    this.tarefaSelecionada = tarefa;
   }
 }
