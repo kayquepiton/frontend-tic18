@@ -25,6 +25,7 @@ export class ShowTarefasComponent {
       this.tarefas = t.tarefas;
     });
   }
+  
   removerTarefa(id: string): void {
     this.store.dispatch(removerTarefa({ id }));
   }
