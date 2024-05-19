@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { TarefaState } from './store/tarefa.reducer';
 import { Observable } from 'rxjs';
-import { selectorSelecionaTarefa } from './store/tarefa.seletors';
+import { Tarefa, selectTarefas } from './store/tarefa.feature';
 import { InputTarefaComponent } from './input-tarefa/input-tarefa.component';
 import { ShowTarefasComponent } from './show-tarefas/show-tarefas.component';
 
@@ -17,18 +16,9 @@ import { ShowTarefasComponent } from './show-tarefas/show-tarefas.component';
 })
 export class AppComponent {
   title = 'NgRxV2';
-  tarefas$: Observable<TarefaState>;
+  tarefas$: Observable<Tarefa[]>;
 
-  constructor(private store: Store<{tarefas: TarefaState}>){
-    this.tarefas$ = store.select(selectorSelecionaTarefa);
+  constructor(private store: Store) {
+    this.tarefas$ = this.store.select(selectTarefas);
   }
 }
-
-/*  
-export const selectorContador = (estado: {contador: number}) => estado.contador;
-contador$: Observable<number>;
-
-  constructor(private store:Store<{contador:number}>) { 
-    this.contador$ = store.select(selectorContador);
-  }
-   */

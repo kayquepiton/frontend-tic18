@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { TarefaState } from '../store/tarefa.reducer';
+import { TarefaState } from '../store/tarefa.feature';
 import { Store } from '@ngrx/store';
-import { selectorSelecionaTarefa } from '../store/tarefa.seletors';
 import { Tarefa } from '../tarefa.model';
-import { removerTarefa, editarTarefa } from '../store/tarefa.actions';
+import { tarefasActions } from '../store/tarefa.feature';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -16,17 +15,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class ShowTarefasComponent {
   tarefas: Tarefa[] = [];
-  tarefaSelecionada: Tarefa | null = null;
 
   constructor(private store: Store<{ tarefas: TarefaState }>) { }
 
   ngOnInit() {
-    this.store.select(selectorSelecionaTarefa).subscribe((t) => {
-      this.tarefas = t.tarefas;
+    this.store.select(state => state.tarefas.tarefas).subscribe((t) => {
+      this.tarefas = t;
     });
   }
-  
+
   removerTarefa(id: string): void {
-    this.store.dispatch(removerTarefa({ id }));
+    this.store.dispatch(tarefasActions.removerTarefa({ id }));
   }
 }

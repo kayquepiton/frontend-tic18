@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { TarefaState } from '../store/tarefa.reducer';
-import { editarTarefa } from '../store/tarefa.actions';
+import { TarefaState } from '../store/tarefa.feature';
+import { tarefasActions } from '../store/tarefa.feature';
 
 @Component({
   selector: 'app-edit-tarefas',
@@ -26,7 +26,7 @@ export class EditTarefasComponent {
     const tarefaId = this.route.snapshot.paramMap.get('id')!;
     
     // Dispara a ação para editar a tarefa com a nova descrição
-    this.store.dispatch(editarTarefa({ id: tarefaId, descricao: this.novaDescricao }));
+    this.store.dispatch(tarefasActions.editarTarefa({ id: tarefaId, descricao: this.novaDescricao }));
 
     // Aguarda um pequeno intervalo antes de navegar para a página inicial
     setTimeout(() => {

@@ -1,15 +1,18 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// app.config.module.ts
 
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { tarefasFeature } from './store/tarefa.feature';
 import { routes } from './app.routes';
-import { provideStore } from '@ngrx/store';
-import { tarefasReducer } from './store/tarefa.reducer';
 
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    provideStore({ tarefas: tarefasReducer })
-  ]
-};
-
-
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+    StoreModule.forRoot({ tarefas: tarefasFeature.reducer })
+  ],
+  declarations: [],
+  exports: [],
+  providers: [],
+})
+export class AppConfigModule { }
