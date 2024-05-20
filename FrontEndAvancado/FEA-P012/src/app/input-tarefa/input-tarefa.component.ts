@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { Tarefa } from '../tarefa.model';
-import { tarefasActions } from '../store/tarefa.feature';
+import { TarefaStore } from '../store/tarefa.store';
+import { Tarefa } from '../model/tarefa.model';
 
 @Component({
   selector: 'app-input-tarefa',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './input-tarefa.component.html',
-  styleUrls: ['./input-tarefa.component.css']
+  styleUrls: ['./input-tarefa.component.scss']
 })
 export class InputTarefaComponent {
   newTask = '';
 
-  constructor(private store: Store) { }
+  constructor(private tarefaStore: TarefaStore) { }
 
   addTask() {
     const newTarefa: Tarefa = {
@@ -23,7 +22,7 @@ export class InputTarefaComponent {
       descricao: this.newTask,
     };
 
-    this.store.dispatch(tarefasActions.adicionarTarefa({ tarefa: newTarefa }));
+    this.tarefaStore.adicionarTarefa(newTarefa);
     this.newTask = '';  // Limpar o campo de entrada após adicionar a tarefa
   }
 

@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShowTarefasComponent } from '../show-tarefas/show-tarefas.component';
+import { ShowTarefaComponent } from '../show-tarefa/show-tarefa.component';
 import { InputTarefaComponent } from '../input-tarefa/input-tarefa.component';
 
 @Component({
   selector: 'app-tarefas',
   standalone: true,
-  imports: [CommonModule, ShowTarefasComponent, InputTarefaComponent],
+  imports: [CommonModule, ShowTarefaComponent, InputTarefaComponent],
   templateUrl: './tarefas.component.html',
-  styleUrls: ['./tarefas.component.css']
+  styleUrls: ['./tarefas.component.scss']
 })
-export class TarefasComponent {
-
-}
+export class TarefasComponent {}

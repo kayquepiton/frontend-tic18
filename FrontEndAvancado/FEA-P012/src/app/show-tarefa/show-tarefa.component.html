@@ -1,0 +1,18 @@
+<ul class="task-list">
+    <!-- Utiliza *ngFor para iterar sobre cada tarefa em 'tarefas' -->
+    <li *ngFor="let tarefa of tarefas" class="task-item">
+      <!-- Exibe a descrição da tarefa -->
+      {{ tarefa.descricao }}
+  
+      <!-- Botão 'Editar' com routerLink para redirecionar para a página de edição -->
+      <button [routerLink]="['/edit-tarefa', tarefa.id]" class="button">
+        Editar
+      </button>
+  
+      <!-- Botão 'Remover' que chama o método 'removerTarefa' ao ser clicado -->
+      <button (click)="removerTarefa(tarefa.id)" class="button">
+        Remover
+      </button>
+    </li>
+  </ul>
+  
